@@ -1,0 +1,34 @@
+#  最大並進速度
+base_max_linear_velocity: 0.4
+#  最大旋回速度
+base_max_angular_velocity: 1.5
+#  最大並進加速度
+base_max_linear_acceleration: 2.0
+#  最大旋回加速度
+base_max_angular_acceleration: 1.0
+#  ゴール付近並進減速度
+base_linear_deceleration_near_goal: 0.5
+#  ゴール減速時の並進速度マージン
+base_linear_velocity_margin: 0.02
+#  経路補間で二点間の補間点数
+interpolation_number: 10
+#  ゴールエリア判定距離
+goal_area_length: 0.01
+#  ゴール判定用ラインのゴールからの距離
+goal_line_length: 0.01
+#  ゴール判定用の位置偏差閾値
+goal_stop_error_length: 0.01
+#  ゴール判定用の角度偏差閾値
+goal_stop_error_angle: 0.0175
+#  上体の向け方を変えるゴールまでの経路長閾値
+path_length_threshold: 0.5
+#  並進速度P制御ゲインパラメータ
+linear_p_gain: 2.0
+#  回転速度P制御ゲインパラメータ
+angular_p_gain: 2.0
+#  ゴール姿勢合わせゲインパラメータ
+goal_angle_gain: 0.6
+# 経路最寄り点部分探索 前回の最寄り点からの探索範囲
+nearest_path_point_partial_search_range: 0.5
+# 経路最寄り点部分探索 探索結果と自己位置との許容するエラー値
+nearest_path_point_partial_search_permit_error: 0.5

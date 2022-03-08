@@ -1,0 +1,1 @@
+roslaunch hma_hsr_cu_pkg cu_debug.launch start_wait_time:=0 open_drawer:=false

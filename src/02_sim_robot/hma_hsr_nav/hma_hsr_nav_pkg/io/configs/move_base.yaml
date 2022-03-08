@@ -1,0 +1,98 @@
+# Copyright (c) 2018 TOYOTA MOTOR CORPORATION
+# All rights reserved.
+
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+
+#  * Redistributions of source code must retain the above copyright notice,
+#  this list of conditions and the following disclaimer.
+#  * Redistributions in binary form must reproduce the above copyright
+#  notice, this list of conditions and the following disclaimer in the
+#  documentation and/or other materials provided with the distribution.
+#  * Neither the name of Toyota Motor Corporation nor the names of its
+#  contributors may be used to endorse or promote products derived from
+#  this software without specific prior written permission.
+
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+# LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+# CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+# ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+
+# Planner selection
+base_global_planner: "global_planner/GlobalPlanner"
+# base_local_planner: "pose_follower/PoseFollower"
+base_local_planner: "dwa_local_planner/DWAPlannerROS"
+
+# Recovery behaviors are defined in robot folders
+
+# Oscillation
+oscillation_timeout: 10.0
+oscillation_distance: 0.5
+
+# Global planner
+planner_frequency: 0.0
+planner_patience: 1.0
+GlobalPlanner:
+  allow_unknown: false
+  default_tolerance: 0.01
+  visualize_potential: false
+  use_dijkstra: true
+  use_quadratic: true
+  use_grid_path: false
+  old_navfn_behavior: false
+
+
+# # Local planner
+# controller_frequency: 10.0
+# controller_patience: 5.0
+
+# PoseFollower:
+#   max_vel_lin: 0.3
+#   min_vel_lin: 0.0
+#   max_vel_th: 1.5
+#   min_vel_th: 0.0
+
+#   tolerance_trans: 0.1
+#   tolerance_rot: 0.1
+
+#   allow_backwards: true
+#   turn_in_place_first: false
+#   max_heading_diff_before_moving: 0.17 # [rad]
+
+#   k_trans: 3.0
+#   k_rot: 1.5
+
+# Local planner
+controller_frequency: 10.0
+controller_patience: 5.0
+
+DWAPlannerROS:
+  acc_lim_x: 3.0
+  acc_lim_y: 3.0
+  acc_lim_theta: 15.0
+
+  max_trans_vel: 0.3
+  min_trans_vel: 0.1
+  max_vel_x: 0.3
+  min_vel_x: 0.0 # disable to move backward
+  max_vel_y: 0.3
+  min_vel_y: -0.3
+  max_rot_vel: 1.5
+  min_rot_vel: 0.1
+
+  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.1
+
+  sim_time: 1.7
+  sim_granularity: 0.025
+
+  vx_samples: 6
+  vy_samples: 6
+  vth_samples: 12

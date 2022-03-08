@@ -1,0 +1,55 @@
+<!--
+Copyright (c) 2022 Hibikino-Musashi@Home
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+ * Neither the name of Hibikino-Musashi@Home nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+   
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<launch>
+    <include file="$(find hma_hsr_gg_pkg)/launch/gg.launch"/>
+
+    <node pkg="hma_hsr_sim_pkg" type="teleop_node.py" name="teleop_node" output="screen"/>
+
+    <!-- Task Preparation -->
+    <arg name="seed" default="14"/>
+    <arg name="percategory" default="0"/>
+    <arg name="obstacles" default="2"/>
+    <arg name="perrow" default="4"/>
+    <arg name="drawer_open" default="false"/>
+    <arg name="task" default="task2"/>
+    <arg name="prep" default="true"/>
+    <node pkg="hma_hsr_sim_pkg" type="task_preparation_node.py" name="task_preparation_node" if="$(arg prep)">
+        <param name="/prep" type="str" value="$(arg prep)"/>
+        <param name="/seed" type="str" value="$(arg seed)"/>
+        <param name="/percategory" type="str" value="$(arg percategory)"/>
+        <param name="/obstacles" type="str" value="$(arg obstacles)"/>
+        <param name="/perrow" type="str" value="$(arg perrow)"/>
+        <param name="/drawer_open" type="bool" value="$(arg drawer_open)"/>
+        <param name="/task" type="str" value="$(arg task)"/>
+    </node>
+
+    <!-- Rviz -->
+    <arg name="rviz" default="true"/>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hma_hsr_gg_pkg)/rviz/gg.rviz" if="$(arg rviz)"/>
+</launch>

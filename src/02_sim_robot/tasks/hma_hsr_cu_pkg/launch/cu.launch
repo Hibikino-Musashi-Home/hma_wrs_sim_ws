@@ -1,0 +1,107 @@
+<!--
+Copyright (c) 2022 Hibikino-Musashi@Home
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+ * Neither the name of Hibikino-Musashi@Home nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+   
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<launch>
+    <param name="/robot_descriptor" value="$(find hma_hsr_sim_pkg)/io/configs/descriptor.csv"/>
+
+    <arg name="start_wait_time" default="5.0"/>
+    <arg name="open_drawer" default="true"/>
+    <node pkg="hma_hsr_cu_pkg" type="sm_cu_node.py" name="sm_cu_node" output="screen">
+        <param name="/start_wait_time" type="double" value="$(arg start_wait_time)"/>
+        <param name="/open_drawer" type="bool" value="$(arg open_drawer)"/>
+    </node>
+    <node pkg="hma_hsr_cu_pkg" type="estimate_orientation_node.py" name="estimate_orientation_node" output="screen"/>
+
+    <!-- Recognition -->
+    <include file="$(find hma_yolact_pkg)/launch/yolact_server.launch">
+        <arg name="cfg" default="task1_config"/>
+        <arg name="weight" default="$(find hma_yolact_pkg)/io/weights/task1/best.pth"/>
+        <arg name="th" default="0.01"/>
+        <arg name="top_k" default="20"/>
+        <arg name="nms_th" default="0.5"/>
+        <arg name="area_size_min" default="-1"/>
+        <arg name="area_size_max" default="30000"/>
+        <arg name="use_d" default="true"/>
+        <arg name="rgb" default="/hsrb/head_rgbd_sensor/rgb/image_raw"/>
+        <arg name="d" default="/hsrb/head_rgbd_sensor/depth_registered/image_raw"/>
+        <arg name="camera_info" default="/hsrb/head_rgbd_sensor/depth_registered/camera_info"/>
+        <arg name="get_pose" default="true"/>
+        <arg name="frame" default="/head_rgbd_sensor_rgb_frame"/>
+        <arg name="max_distance" default="2.5"/>
+        <arg name="specific_id" default=""/>
+        <arg name="ignore_id" default="29, 36, 71"/>
+        <arg name="show_name" default="true"/>
+    </include>
+
+    <!-- Moveit -->
+    <include file="$(find hsrb_moveit_config)/launch/hsrb_demo_with_controller.launch">
+      <arg name="use_gui" value="false"/>
+      <arg name="load_robot_description" value="false"/>
+    </include>
+    <arg name="robot_description" default="robot_description"/>
+    <group ns="$(arg robot_description)_planning">
+      <rosparam command="load" file="$(find hma_hsr_sim_pkg)/io/moveit/joint_limits.yaml"/>
+    </group>
+    <arg name="robot_name" default="hsrb"/>
+    <group ns="$(arg robot_description)_kinematics">
+      <rosparam command="load" file="$(find hma_hsr_gg_pkg)/io/moveit/kinematics.yaml"/>
+      <rosparam param="robot_name" subst_value="true">$(arg robot_name)</rosparam>
+    </group>
+    <node pkg="rosservice" type="rosservice" name="move_group_log" args="call /move_group/set_logger_level ros ERROR" /> <!-- Disable warning log -->
+
+    <!-- Mapping -->
+    <node pkg="hma_common_pkg" type="mapping_object_server.py" name="mapping_object_server" output="screen" respawn="true">
+        <param name="/area_data" type="str" value="$(find hma_hsr_cu_pkg)/io/mapping_area/area.json"/>
+    </node>
+
+    <!-- Navigation -->
+    <node pkg="map_server" type="map_server" name="map_server" output="screen" args="$(find hma_common_pkg)/io/map/map.yaml">
+        <remap from="/map" to="/map/hma"/>
+    </node>
+
+    <include file="$(find hma_hsr_nav_pkg)/launch/include/omni_path_follower.launch"/>
+    <node pkg="hma_common_pkg" type="publish_obstacles_node.py" name="publish_obstacles_node" output="screen" respawn="true"/>
+    <node pkg="hma_hsr_nav_pkg" type="manage_cmd_vel_node.py" name="manage_cmd_vel_node" output="screen" respawn="true"/>
+    <node pkg="hma_hsr_nav_pkg" type="motion_synthesis_server.py" name="motion_synthesis_server" output="screen" respawn="true"/>
+    
+    <include file="$(find hma_hsr_nav_pkg)/launch/include/move_base.launch.xml">
+        <arg name="map_topic" default="map/hma"/>
+        <arg name="cmd_vel_topic" default="hsrb/manage/command_velocity"/>
+    </include>
+    <node pkg="rosservice" type="rosservice" name="hma_move_base_log" args="call /hma_move_base/set_logger_level ros ERROR" /> <!-- Disable warning log -->
+    
+    <!-- World TF -->
+    <node pkg="tf" type="static_transform_publisher" name="map_to_world" args="1.2 2.15 0 1.57 0 0 map world 10" />
+    <node pkg="tf" type="static_transform_publisher" name="world_to_container_a" args="-2.75 -0.2 0.4 0 0 0 world container_a 10" />
+
+    <!-- Time Supervisor -->
+    <arg name="time" default="14.0"/>
+    <node pkg="hma_hsr_sim_pkg" type="sim_time_supervise_node.py" name="sim_time_supervise_node" output="screen" required="true">
+        <param name="/time" type="double" value="$(arg time)"/>
+    </node>
+</launch>

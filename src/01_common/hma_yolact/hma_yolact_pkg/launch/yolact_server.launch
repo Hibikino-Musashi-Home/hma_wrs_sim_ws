@@ -1,0 +1,72 @@
+<!--
+Copyright (c) 2022 Hibikino-Musashi@Home
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+ * Neither the name of Hibikino-Musashi@Home nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+   
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<launch>
+    <arg name="name" default="yolact_server"/>
+    <arg name="action_name" default="yolact"/>
+    <arg name="use_gpu" default="true"/>
+    <arg name="cfg" default="yolact_edge_pytorch_config"/>
+    <arg name="weight" default="$(find hma_yolact_pkg)/io/weights/yolact_edge_54_800000.pth"/>
+    <arg name="th" default="0.1"/>
+    <arg name="top_k" default="30"/>
+    <arg name="nms_th" default="0.5"/>
+    <arg name="area_size_min" default="-1"/>
+    <arg name="area_size_max" default="4294967296"/>
+    <arg name="use_d" default="false"/>
+    <arg name="rgb" default="/camera/rgb/image_raw"/>
+    <arg name="d" default="/camera/depth_registered/image_raw"/>
+    <arg name="camera_info" default="/camera/depth_registered/camera_info"/>
+    <arg name="get_pose" default="false"/>
+    <arg name="frame" default="/camera_frame"/>
+    <arg name="max_distance" default="-1"/>
+    <arg name="specific_id" default=""/>
+    <arg name="ignore_id" default=""/>
+    <arg name="show_name" default="false"/>
+
+    <node pkg="hma_yolact_pkg" type="yolact_server.py" name="$(arg name)" output="screen">
+        <param name="/action_name" type="str" value="$(arg action_name)"/>
+        <param name="/use_gpu" type="str" value="$(arg use_gpu)"/>
+        <param name="/cfg" type="str" value="$(arg cfg)"/>
+        <param name="/weight" type="str" value="$(arg weight)"/>
+        <param name="/th" type="double" value="$(arg th)"/>
+        <param name="/top_k" type="double" value="$(arg top_k)"/>
+        <param name="/nms_th" type="double" value="$(arg nms_th)"/>
+        <param name="/area_size_range/min" type="int" value="$(arg area_size_min)"/>
+        <param name="/area_size_range/max" type="int" value="$(arg area_size_max)"/>
+        <param name="/use_d" type="bool" value="$(arg use_d)"/>
+        <param name="/rgb" type="str" value="$(arg rgb)"/>
+        <param name="/d" type="str" value="$(arg d)"/>
+        <param name="/camera_info" type="str" value="$(arg camera_info)"/>
+        <param name="/get_pose" type="bool" value="$(arg get_pose)"/>
+        <param name="/frame" type="str" value="$(arg frame)"/>
+        <param name="/max_distance" type="double" value="$(arg max_distance)"/>
+        <param name="/specific_id" type="str" value="$(arg specific_id)"/>
+        <param name="/ignore_id" type="str" value="$(arg ignore_id)"/>
+        <param name="/show_name" type="bool" value="$(arg show_name)"/>
+    </node>
+</launch>

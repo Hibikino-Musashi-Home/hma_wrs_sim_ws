@@ -1,0 +1,17 @@
+TOPIC_CAMERA_INFO,/hsrb/head_rgbd_sensor/depth_registered/camera_info
+TOPIC_RGBD_RGB,/hsrb/head_rgbd_sensor/rgb/image_raw/
+TOPIC_RGBD_RGB_COMPRESSED,/hsrb/head_rgbd_sensor/rgb/image_raw/compressed
+TOPIC_RGBD_DEPTH,/hsrb/head_rgbd_sensor/depth_registered/image_raw
+TOPIC_RGBD_DEPTH_COMPRESSED,/hsrb/head_rgbd_sensor/depth_registered/image_raw/compressed
+TOPIC_RGBD_POINT,/hsrb/head_rgbd_sensor/depth_registered/rectified_points
+TOPIC_RGBD_RGB_CAMERA_INFO,/hsrb/head_rgbd_sensor/rgb/camera_info
+TOPIC_RGBD_DEPTH_CAMERA_INFO,/hsrb/head_rgbd_sensor/depth_registered/camera_info
+TOPIC_HAND_CAMERA,/hsrb/hand_camera/image_raw
+TOPIC_HAND_CAMERA_COMPRESSED,/hsrb/hand_camera/image_raw/compressed
+TOPIC_LRF,/hsrb/base_scan
+TOPIC_BASE_VELOCITY,/hsrb/command_velocity
+FRAME_MAP,map
+FRAME_ODOM,odom
+FRAME_BASE_FOOTPRINT,base_footprint
+FRAME_RGBD,head_rgbd_sensor_gazebo_frame
+FRAME_RGBD_POINT,head_rgbd_sensor_rgb_frame

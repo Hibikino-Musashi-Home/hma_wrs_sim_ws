@@ -1,0 +1,21 @@
+[submodule "src/03_hsrb/hsrb_description"]
+	path = src/03_hsrb/hsrb_description
+	url = https://github.com/hsr-project/hsrb_description.git
+[submodule "src/03_hsrb/hsrb_rosnav"]
+	path = src/03_hsrb/hsrb_rosnav
+	url = https://github.com/hsr-project/hsrb_rosnav.git
+[submodule "src/03_hsrb/hsrb_meshes"]
+	path = src/03_hsrb/hsrb_meshes
+	url = https://github.com/hsr-project/hsrb_meshes.git
+[submodule "src/03_hsrb/tmc_control_msgs"]
+	path = src/03_hsrb/tmc_control_msgs
+	url = https://github.com/hsr-project/tmc_control_msgs.git
+[submodule "src/04_sim_docker/hsrb_robocup_dspl_docker"]
+	path = src/04_sim_docker/hsrb_robocup_dspl_docker
+	url = https://github.com/hsr-project/hsrb_robocup_dspl_docker.git
+[submodule "src/01_common/hma_yolact/hma_yolact_pkg/yolact_edge"]
+	path = src/01_common/hma_yolact/hma_yolact_pkg/yolact_edge
+	url = https://github.com/haotian-liu/yolact_edge.git
+[submodule "src/03_hsrb/tmc_wrs_gazebo"]
+	path = src/03_hsrb/tmc_wrs_gazebo
+	url = https://github.com/hsr-project/tmc_wrs_gazebo.git

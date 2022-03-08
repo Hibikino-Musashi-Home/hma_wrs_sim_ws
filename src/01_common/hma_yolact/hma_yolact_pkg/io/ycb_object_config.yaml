@@ -1,0 +1,23 @@
+task1:
+  class_names: !!python/tuple ['2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+    '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '25', '26',
+    '29', '30', '31', '32', '33', '35', '36', '37', '38', '40', '42', '43', '44',
+    '48', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '61', '62',
+    '63', '65', '70', '71', '72', '73', '77', '80', '81']
+    
+  show_names: !!python/tuple [coffee_can, cheez-it, sugar_box, tomato_can, mustard,
+    tuna_can, choco_box, strawberry_box, spam, banana, strawberry, apple, lemon, peach,
+    pear, orange, plum, pitcher_base, cleanser_bottle, spray_bottle, bowl, mug, sponge,
+    plate, fork, spoon, knife, spatula, drill, wood_block, scissors, padlock, large_marker,
+    wrench, phillips_screwdriver, flat_screwdriver, hammer, clamp0, clamp1, clamp2,
+    soccer_ball, soft_ball, baseball, tennis_ball, racquetball, golf_ball, chain,
+    foam_brick, dice, marbles, cups, colored_wood_block, 9-peg, airplane, lego, rubiks,
+    airplane1, airplane2]
+
+task2b:
+  class_names: !!python/tuple ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+    '11', '12', '13', '14', '15', '16', '17', '18']
+
+  show_names: !!python/tuple [cracker_box, sugar_box, pudding_box, gelatin_box, potted_meat_can,
+    master_chef_can, tuna_fish_can, pringles, mustard_bottle, tomato_soup_can, banana, strawberry, apple,
+    lemon, peach, pear, orange, plum]
