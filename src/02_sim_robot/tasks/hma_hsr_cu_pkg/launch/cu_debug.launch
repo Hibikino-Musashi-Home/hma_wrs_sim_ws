@@ -47,7 +47,7 @@ POSSIBILITY OF SUCH DAMAGE.
     <arg name="drawer_open" default="false"/>
     <arg name="task" default="task1"/>
     <arg name="prep" default="true"/>
-    <node pkg="hma_hsr_sim_pkg" type="task_preparation_node.py" name="task_preparation_node" if="$(arg prep)">
+    <node pkg="hma_hsr_sim_pkg" type="prepare_task_node.py" name="prepare_task_node" if="$(arg prep)">
         <param name="/prep" type="str" value="$(arg prep)"/>
         <param name="/seed" type="str" value="$(arg seed)"/>
         <param name="/percategory" type="str" value="$(arg percategory)"/>

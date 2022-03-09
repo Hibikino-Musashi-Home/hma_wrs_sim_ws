@@ -66,12 +66,3 @@ class MappingAction(IntEnum):
     GET = 5
     GETALL = 6
     GETNEAREST = 7
-
-class LibDummy:
-    """Dummy class."""
-
-    def __init__(self):
-        return
-
-    def delete(self):
-        return

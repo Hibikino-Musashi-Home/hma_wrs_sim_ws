@@ -29,11 +29,9 @@
 
 import os
 import sys
-import roslib
 import rospy
 import threading
 
-from subprocess import Popen
 from std_msgs.msg import Bool
 
 
@@ -41,7 +39,9 @@ from std_msgs.msg import Bool
 GP_LOOP_RATE = 10.0
 
 
-class SimTimeSupervise:
+class ManageTaskTime:
+    """Manage task time."""
+    
     def __init__(self, run_enable=True):
         self.lock = threading.Lock()
 
@@ -60,7 +60,6 @@ class SimTimeSupervise:
                                         Bool,
                                         self.subf_run_enable,
                                         queue_size = 1)
-
 
         return
 
@@ -98,7 +97,7 @@ if __name__ == "__main__":
     p_loop_rate = rospy.get_param(rospy.get_name() + "/loop_rate", GP_LOOP_RATE)
     loop_wait = rospy.Rate(p_loop_rate)
 
-    cls = SimTimeSupervise(False)
+    cls = ManageTaskTime(False)
     rospy.on_shutdown(cls.delete)
     while not rospy.is_shutdown():
         try:

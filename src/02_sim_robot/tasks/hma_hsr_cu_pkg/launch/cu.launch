@@ -101,7 +101,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
     <!-- Time Supervisor -->
     <arg name="time" default="14.0"/>
-    <node pkg="hma_hsr_sim_pkg" type="sim_time_supervise_node.py" name="sim_time_supervise_node" output="screen" required="true">
+    <node pkg="hma_hsr_sim_pkg" type="manage_task_time_node.py" name="manage_task_time_node" output="screen" required="true">
         <param name="/time" type="double" value="$(arg time)"/>
     </node>
 </launch>

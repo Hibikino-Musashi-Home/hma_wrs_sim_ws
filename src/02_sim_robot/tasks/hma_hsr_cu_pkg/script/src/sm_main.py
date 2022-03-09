@@ -101,7 +101,7 @@ class Start(smach.State):
 
         # ROS I/F
         self.pub_time_supervisor = rospy.Publisher(
-            "/sim_time_supervise_node/run_enable", Bool, queue_size=1)
+            "/manage_task_time_node/run_enable", Bool, queue_size=1)
 
         return
 
