@@ -106,7 +106,7 @@ class StateMachine:
 
         # Select start state
         # rospy.loginfo("[" + rospy.get_name() + "]: Please select start state using Enter/Space/d")
-        # start_state = self.lib["sm"].getStartState(sm_main)
+        # start_state = self.lib["sm"].get_start_state(sm_main)
         # if start_state == "Default":
         #    start_state = GP_DEFAULT_START_STATE
         start_state = GP_DEFAULT_START_STATE
