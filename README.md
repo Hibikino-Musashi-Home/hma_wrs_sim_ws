@@ -18,8 +18,7 @@ It contains the source code that won 2nd place at [RoboCup 2021 Worldwide](https
 It also contains a part of the 1st place source code at the [World Robot Summit 2020 Partner Robot Challenge (Real Space)](https://wrs.nedo.go.jp/wrs2020/challenge/service/partner.html).
 
 ## Execution video
-<!-- TODO: 撮り直す -->
-[![](https://img.youtube.com/vi/orbCnOmkeAo/0.jpg)](https://youtu.be/orbCnOmkeAo?t=4895)
+[![](https://img.youtube.com/vi/DRKtSZEgaNQ/0.jpg)](https://www.youtube.com/watch?v=DRKtSZEgaNQ)
 
 # Installation
 Please perform the docker installation described in the [WRS Simulator](https://github.com/hsr-project/tmc_wrs_docker) in advance.
@@ -38,25 +37,28 @@ $ sh get_weights.sh
 ```
 
 # Usage
-## Terminal 1: Starting the simulator
+## 1. Starting the simulator
 ```
 cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker
 docker-compose -f docker-compose.nvidia.yml up
 ```
 
-## Terminal 2: Executing the program in the local environment
-```
-$ cd ~/ros_ws/hma/hma_wrs_sim_ws
-$ sh scripts/exec_all.sh
-```
-
-If you want to use docker, execute the following command.
-## Terminal 2: Executing the program using docker
+## 2. Executing the program
+## i. with docker
 <!-- TODO: 動いてない -->
 ```
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
 $ docker build . -t hma_wrs_sim_ws
-$ docker run --gpus all -it hma_wrs_sim_ws /bin/bash
+$ docker run --gpus all -it --net host hma_wrs_sim_ws:latest /bin/bash
+$ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend
+$ source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
+$ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
+```
+
+## ii. without docker
+```
+$ cd ~/ros_ws/hma/hma_wrs_sim_ws
+$ sh scripts/exec_all.sh
 ```
 
 # License
