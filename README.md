@@ -49,7 +49,7 @@ After starting the simulator, access to [http://localhost:3000/](http://localhos
 ```
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
 $ docker build . -t hma_wrs_sim_ws
-$ sh docker-run
+$ sh docker-run.sh
 $ source /opt/ros/melodic/setup.bash && cd ~/ros_ws/hma/hma_wrs_sim_ws && catkin build
 $ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend && source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
 $ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
