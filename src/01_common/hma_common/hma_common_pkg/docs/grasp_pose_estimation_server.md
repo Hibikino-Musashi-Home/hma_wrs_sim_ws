@@ -15,7 +15,7 @@ If the object's height is less than the specified value, it is grasped from the 
 
 If the object's height is greater than the specified value, it is grasped from the top or the front with reference `~size_th/max/width.`
 
-Defaults to `0.15`.
+Defaults to `0.15` [m].
 
 **~size_th/max/width (float)**
 
@@ -23,7 +23,7 @@ If the object's width is less than the specified value, it is grasped from the f
 
 If the object's width is greater than the specified value, it is grasped from the top.
 
-Defaults to `0.14`.
+Defaults to `0.14` [m].
 
 ### Published topics
 **dbg ([sensor_msgs/PointCloud2.msg](https://docs.ros.org/en/api/sensor_msgs/html/msg/PointCloud2.html))**

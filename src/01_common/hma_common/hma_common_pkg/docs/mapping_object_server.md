@@ -35,8 +35,8 @@ Defaults to `"hma_common_pkg/io/mapping_area/area.json"`.
 Select the method to calculate one final recognition result from multiple recognition results.
 
 Two methods are available. 
-- When the input is "1", the most frequent ID is the final recognition result. 
-- When the input is "2", the highest score's ID is the final recognition result.
+- When the input is `1`, the most frequent ID is the final recognition result. 
+- When the input is `2`, the highest score's ID is the final recognition result.
 
 Defaults to `0`.
 

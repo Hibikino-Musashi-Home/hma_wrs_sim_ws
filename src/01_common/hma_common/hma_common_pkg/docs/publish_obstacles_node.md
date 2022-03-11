@@ -14,7 +14,7 @@ Object information is published as a point cloud for obstacles of navigation.
 
 Control whether or not execution is performed.
 
-If True, executed; if False, not executed.
+If `True`, executed; if `False`, not executed.
 
 ### Action clients
 **mapping_object ([hma_common_action/MappingObjectAction](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_action/action/MappingObject.action))**
