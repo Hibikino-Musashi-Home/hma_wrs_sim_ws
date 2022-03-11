@@ -26,7 +26,7 @@ The JSON file should be written in the following format.
     }
 }
 ```
-An example JSON file can be found [here](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/src/01_common/hma_common/hma_common_pkg/io/mapping_area/area.json).
+An example JSON file can be found [here](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_pkg/io/mapping_area/area.json).
 
 Defaults to `"hma_common_pkg/io/mapping_area/area.json"`.
 
@@ -60,7 +60,7 @@ Publish markers for visualization indicating the location of mapping　objects.
 Publish markers for visualization indicating the name of mapping　objects.
 
 ### Action servers
-**mapping_object ([hma_common_action/MappingObjectAction](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/src/01_common/hma_common/hma_common_action/action/MappingObject.action))**
+**mapping_object ([hma_common_action/MappingObjectAction](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_action/action/MappingObject.action))**
 
 This action server provides various functions such as adding objects, performing mappings, and referencing objects.
 
@@ -87,4 +87,4 @@ The required arguments and return values for the action are as follows.
         Optional for ADD, DELETE, CHECK, GETNEAREST. Defaults to `""`.
 
 - Returns
-    - [hma_common_action/MappingObjectResult](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/src/01_common/hma_common/hma_common_action/action/MappingObject.action): Results for each action.
+    - [hma_common_action/MappingObjectResult](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_action/action/MappingObject.action): Results for each action.

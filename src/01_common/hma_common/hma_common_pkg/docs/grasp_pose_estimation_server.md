@@ -37,7 +37,7 @@ Publish a rectangular marker for visualization.
 The color of markers are blue when grasped from top and red when grasped from the front.
 
 ### Action servers
-**grasp_pose_estimation ([hma_common_action/GraspPoseEstimationAction](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/src/01_common/hma_common/hma_common_action/action/GraspPoseEstimation.action))**
+**grasp_pose_estimation ([hma_common_action/GraspPoseEstimationAction](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_action/action/GraspPoseEstimation.action))**
 
 This action server provides a function to estimate the grasping pose of a specific object.
 
@@ -53,4 +53,4 @@ The required arguments and return values for the action are as follows.
         - FRONT: Estimate the grasp pose only from the front.
 
 - Returns:
-    - [hma_common_action/GraspPoseEstimationResult](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/src/01_common/hma_common/hma_common_action/action/GraspPoseEstimation.action): Results of grasp pose estimation.
+    - [hma_common_action/GraspPoseEstimationResult](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_action/action/GraspPoseEstimation.action): Results of grasp pose estimation.
