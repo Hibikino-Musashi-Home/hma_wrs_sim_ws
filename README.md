@@ -54,6 +54,11 @@ $ source /opt/ros/melodic/setup.bash && cd ~/ros_ws/hma/hma_wrs_sim_ws && catkin
 $ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend && source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
 $ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
 ```
+### Notes
+- Changing the source code placed in ~/ros_ws/hma/hma_wrs_sim_ws/src on the local computer also changes the source code in the docker container.
+
+- If you exit from a docker container by typing ctrl + p, ctrl + q, you can re-enter the container with `$ docker attach [container id]`.
+The container id can check using `$ docker ps`.
 
 ## ii. without docker
 ```
