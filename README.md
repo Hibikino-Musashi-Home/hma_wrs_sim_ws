@@ -42,16 +42,16 @@ $ sh get_weights.sh
 cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker
 docker-compose -f docker-compose.nvidia.yml up
 ```
+After starting the simulator, access to [http://localhost:3000/](http://localhost:3000/) and press the Start button (▷) on the simulator.
 
 ## 2. Executing the program
 ## i. with docker
-<!-- TODO: 動いてない -->
 ```
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
 $ docker build . -t hma_wrs_sim_ws
-$ docker run --gpus all -it --net host hma_wrs_sim_ws:latest /bin/bash
-$ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend
-$ source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
+$ sh docker-run
+$ source /opt/ros/melodic/setup.bash && cd ~/ros_ws/hma/hma_wrs_sim_ws && catkin build
+$ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend && source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
 $ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
 ```
 
