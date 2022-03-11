@@ -51,6 +51,7 @@ GP_LOOP_RATE = 30.0
 
 class MappingObjectServer:
     """Object mapping ROS Action server."""
+
     def __init__(self):
         self.update_ros_time = {}
 
@@ -67,10 +68,10 @@ class MappingObjectServer:
         self.mapping_data = {"id":[], "place":[], "pose":[], "score":[]}
 
         # ROS I/F
-        self.p_area_data = rospy.get_param(
-            rospy.get_name() + "/area_data",
+        self.p_area_data_path = rospy.get_param(
+            rospy.get_name() + "/area_data_path",
             roslib.packages.get_pkg_dir("hma_common_pkg") + "/io/mapping_area/area.json")
-        self.p_select_mode = rospy.get_param(rospy.get_name() + "/select_mode", 1)
+        self.p_select_mode = rospy.get_param(rospy.get_name() + "/select_mode", 0)
         self.p_frame = rospy.get_param(rospy.get_name() + "/frame", "map")
 
         self.pub_area = rospy.Publisher(rospy.get_name() + "/area", Marker, queue_size = 1)
@@ -84,7 +85,7 @@ class MappingObjectServer:
 
         # Set area markers
         rospy.sleep(1.0) # Do not delete this because the marker will not appear
-        json_open = open(self.p_area_data, "r")
+        json_open = open(self.p_area_data_path, "r")
         self.area_data = json.load(json_open)
         self.set_mapping_area_marker(self.area_data)
 

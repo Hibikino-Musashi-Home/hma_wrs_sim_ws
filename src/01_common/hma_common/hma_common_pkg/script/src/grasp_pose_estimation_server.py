@@ -63,6 +63,7 @@ class GraspPose(IntEnum):
 
 class GraspPoseEstimationServer:
     """Grasp pose estimation ROS Action server."""
+
     def __init__(self):
         self.cb = CvBridge()
 
@@ -70,10 +71,9 @@ class GraspPoseEstimationServer:
         self.p_camera_info = rospy.get_param(rospy.get_name() + "/camera_info",
                                              "/camera/depth_registered/camera_info")
         self.p_size_th = {"min": {"height": 0.0},
-                          "max": {"width": 0.0, "depth": 0.0}}
+                          "max": {"width": 0.0}}
         self.p_size_th["min"]["height"] = rospy.get_param(rospy.get_name() + "/size_th/min/height", 0.15)
         self.p_size_th["max"]["width"] = rospy.get_param(rospy.get_name() + "/size_th/max/width", 0.14)
-        self.p_size_th["max"]["depth"] = rospy.get_param(rospy.get_name() + "/size_th/max/depth", 0.14)
 
         self.pub_dbg = rospy.Publisher(rospy.get_name() + "/dbg",
                                        PointCloud2,
