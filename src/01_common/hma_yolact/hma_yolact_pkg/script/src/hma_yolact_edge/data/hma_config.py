@@ -8,7 +8,7 @@ import yaml
 sys.path.append(roslib.packages.get_pkg_dir("hma_yolact_pkg") + "/yolact_edge")
 from data.config import *
 
-ycb_config = yaml.load(open(roslib.packages.get_pkg_dir("hma_yolact_pkg") + '/io/ycb_object_config.yaml'))
+ycb_config = yaml.load(open(roslib.packages.get_pkg_dir("hma_yolact_pkg") + '/io/ycb_object_config.yaml'), Loader=yaml.FullLoader)
 
 hma_base = dataset_base.copy({
     "name": "hma base",

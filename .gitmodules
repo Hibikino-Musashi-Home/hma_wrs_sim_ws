@@ -19,3 +19,18 @@
 [submodule "src/03_hsrb/tmc_wrs_gazebo"]
 	path = src/03_hsrb/tmc_wrs_gazebo
 	url = https://github.com/hsr-project/tmc_wrs_gazebo.git
+[submodule "src/03_tmc/hsrb_description"]
+	path = src/03_tmc/hsrb_description
+	url = https://github.com/hsr-project/hsrb_description.git
+[submodule "src/03_tmc/hsrb_meshes"]
+	path = src/03_tmc/hsrb_meshes
+	url = https://github.com/hsr-project/hsrb_meshes.git
+[submodule "src/03_tmc/hsrb_rosnav"]
+	path = src/03_tmc/hsrb_rosnav
+	url = https://github.com/hsr-project/hsrb_rosnav.git
+[submodule "src/03_tmc/tmc_control_msgs"]
+	path = src/03_tmc/tmc_control_msgs
+	url = https://github.com/hsr-project/tmc_control_msgs.git
+[submodule "src/03_tmc/tmc_wrs_gazebo"]
+	path = src/03_tmc/tmc_wrs_gazebo
+	url = https://github.com/hsr-project/tmc_wrs_gazebo.git

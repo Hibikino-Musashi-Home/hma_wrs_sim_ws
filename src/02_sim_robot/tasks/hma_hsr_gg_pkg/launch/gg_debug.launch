@@ -32,21 +32,21 @@ POSSIBILITY OF SUCH DAMAGE.
     <node pkg="hma_hsr_sim_pkg" type="teleop_node.py" name="teleop_node" output="screen"/>
 
     <!-- Task Preparation -->
+    <arg name="prep" default="true"/>
     <arg name="seed" default="14"/>
     <arg name="percategory" default="0"/>
     <arg name="obstacles" default="2"/>
     <arg name="perrow" default="4"/>
     <arg name="drawer_open" default="false"/>
-    <arg name="task" default="task2"/>
-    <arg name="prep" default="true"/>
-    <node pkg="hma_hsr_sim_pkg" type="prepare_task_node.py" name="prepare_task_node" if="$(arg prep)">
-        <param name="/prep" type="str" value="$(arg prep)"/>
-        <param name="/seed" type="str" value="$(arg seed)"/>
-        <param name="/percategory" type="str" value="$(arg percategory)"/>
-        <param name="/obstacles" type="str" value="$(arg obstacles)"/>
-        <param name="/perrow" type="str" value="$(arg perrow)"/>
+    <arg name="delete_prefix" default="task2"/>
+    <node pkg="hma_hsr_sim_pkg" type="prepare_task_node.py" name="prepare_task_node" output="screen">
+        <param name="/prep" type="bool" value="$(arg prep)"/>
+        <param name="/seed" type="int" value="$(arg seed)"/>
+        <param name="/percategory" type="int" value="$(arg percategory)"/>
+        <param name="/obstacles" type="int" value="$(arg obstacles)"/>
+        <param name="/perrow" type="int" value="$(arg perrow)"/>
         <param name="/drawer_open" type="bool" value="$(arg drawer_open)"/>
-        <param name="/task" type="str" value="$(arg task)"/>
+        <param name="/delete_prefix" type="str" value="$(arg delete_prefix)"/>
     </node>
 
     <!-- Rviz -->

@@ -41,24 +41,20 @@ from geometry_msgs.msg import Pose, Point, Quaternion
 from sensor_msgs.msg import Image, CameraInfo
 
 from hma_yolact_msgs.msg import YolactWithoutPose, YolactWithPose
-from hma_yolact_action.msg import YolactAction
-from hma_yolact_action.msg import YolactResult
+from hma_yolact_action.msg import YolactAction, YolactResult
 
 sys.path.remove("/opt/ros/melodic/lib/python2.7/dist-packages")
 import cv2
 from cv_bridge import CvBridge
 import image_geometry
 
-# sys.path.append(roslib.packages.get_pkg_dir("hma_yolact_pkg") + "/yolact_edge")
-
 import hma_yolact_edge.hma_yolact as yolact
 from hma_yolact_edge.data.hma_config import set_hma_cfg
-os.chdir(roslib.packages.get_pkg_dir("hma_yolact_pkg") + "/yolact_edge")
 
 
 # Global
 GP_LOOP_RATE = 30.0
-G_MM2M = 0.001
+G_MM2M = 0.001 # meters to millimeters
 
 
 class YolactServer:
@@ -78,7 +74,7 @@ class YolactServer:
         self.camera_model = None
 
         # ROS I/F
-        self.p_action_name = rospy.get_param(rospy.get_name() + "/action_name", True)
+        self.p_action_name = rospy.get_param(rospy.get_name() + "/action_name", "/yolact")
         self.p_use_gpu = rospy.get_param(rospy.get_name() + "/use_gpu", True)
         self.p_cfg = rospy.get_param(rospy.get_name() + "/cfg", "yolact_edge_pytorch_config")
         self.p_weight = rospy.get_param(rospy.get_name() + "/weight", 
@@ -94,15 +90,11 @@ class YolactServer:
         self.p_camera_info = rospy.get_param(rospy.get_name() + "/camera_info", "/camera/depth_registered/camera_info")
         self.p_get_pose = rospy.get_param(rospy.get_name() + "/get_pose", False)
         self.p_frame = rospy.get_param(rospy.get_name() + "/frame", "/camera_frame")
-        self.p_max_distance = rospy.get_param(rospy.get_name() + "/max_distance", -1)
+        self.p_max_distance = rospy.get_param(rospy.get_name() + "/max_distance", -1.0)
         self.p_specific_id = rospy.get_param(rospy.get_name() + "/specific_id", "")
         self.p_ignore_id = rospy.get_param(rospy.get_name() + "/ignore_id", "")
         self.p_show_name = rospy.get_param(rospy.get_name() + "/show_name", False)
 
-        self.pub_yolact_without_pose = rospy.Publisher(
-            rospy.get_name() + "/yolact_without_pose",
-            YolactWithoutPose,
-            queue_size = 1)
         self.pub_smi_dbg_rgb = rospy.Publisher(
             rospy.get_name() + "/dbg/rgb",
             Image,
@@ -114,6 +106,10 @@ class YolactServer:
         self.pub_smi_dbg_mask = rospy.Publisher(
             rospy.get_name() + "/dbg/mask",
             Image,
+            queue_size = 1)
+        self.pub_yolact_without_pose = rospy.Publisher(
+            rospy.get_name() + "/yolact_without_pose",
+            YolactWithoutPose,
             queue_size = 1)
 
         self.sub_smi_rgb = message_filters.Subscriber(self.p_rgb, Image)

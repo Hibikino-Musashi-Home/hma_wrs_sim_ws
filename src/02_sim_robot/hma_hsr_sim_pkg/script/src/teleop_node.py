@@ -101,8 +101,8 @@ class Teleop:
 
         Args:
             pressed (list[bool]): List of keys pressed or not (pygame format).
-            key_plus (_type_): Key that returns positive velocity.
-            key_minus (_type_): Key that returns negative velocity.
+            key_plus (int): Key that returns positive velocity.
+            key_minus (int): Key that returns negative velocity.
 
         Returns:
             float: Speed.
@@ -126,7 +126,7 @@ class Teleop:
 
         x = self.get_speed(pressed, pygame.K_w, pygame.K_s) # w: forward, s: backward
         y = self.get_speed(pressed, pygame.K_a, pygame.K_d) # a: left, d: right
-        yaw = self.get_speed(pressed, pygame.K_q, pygame.K_e) # q: turn left, e: turn right
+        yaw = self.get_speed(pressed, pygame.K_q, pygame.K_e) # q: rotate left, e: rotate right
 
         self.lib["hsrpub"].omni_base_vel(
             x * 0.2, y * 0.2, yaw * 0.5)

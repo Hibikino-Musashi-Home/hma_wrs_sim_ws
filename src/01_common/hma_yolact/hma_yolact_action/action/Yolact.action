@@ -25,14 +25,14 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-sensor_msgs/Image rgb
-sensor_msgs/Image d
-float32 max_distance
-string specific_id
-bool show_name
+sensor_msgs/Image rgb # RGB image. It is automatically subscribed from the specified topic at startup if not set.
+sensor_msgs/Image d # Depth image. It is automatically subscribed from the specified topic at startup if not set.
+float32 max_distance # The maximum distance to be recognized.
+string specific_id # Specify a specific ID to be recognized.
+bool show_name # The name, not the ID, is displayed on the published image for visualization. 
 ---
-bool result
-hma_yolact_msgs/YolactWithoutPose without_pose
-hma_yolact_msgs/YolactWithPose with_pose
+bool result # Whether the action was successful or not.
+hma_yolact_msgs/YolactWithoutPose without_pose # The recognition results.
+hma_yolact_msgs/YolactWithPose with_pose # The recognition results with the 3D pose.
 ---
 bool feedback

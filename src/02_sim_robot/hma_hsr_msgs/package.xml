@@ -24,5 +24,6 @@
   <exec_depend>std_msgs</exec_depend>
 
   <export>
+    <rosdoc config="rosdoc.yaml" />
   </export>
 </package>

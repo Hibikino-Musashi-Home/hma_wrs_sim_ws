@@ -27,37 +27,5 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 -->
 <launch>
-   
-    <arg name="start_wait_time" default="5.0"/>
-    <arg name="open_drawer" default="true"/>
-    <arg name="time" default="14.0"/>
-    <include file="$(find hma_hsr_cu_pkg)/launch/cu.launch">
-        <arg name="start_wait_time" default="$(arg start_wait_time)"/>
-        <arg name="open_drawer" default="$(arg open_drawer)"/>
-        <arg name="time" default="$(arg time)"/>
-    </include>
-
     <node pkg="hma_hsr_sim_pkg" type="teleop_node.py" name="teleop_node" output="screen"/>
-
-    <!-- Task Preparation -->
-    <arg name="prep" default="true"/>
-    <arg name="seed" default="-1"/>
-    <arg name="percategory" default="2"/>
-    <arg name="obstacles" default="0"/>
-    <arg name="perrow" default="0"/>
-    <arg name="drawer_open" default="false"/>
-    <arg name="delete_prefix" default="task1"/>
-    <node pkg="hma_hsr_sim_pkg" type="prepare_task_node.py" name="prepare_task_node" output="screen">
-        <param name="/prep" type="bool" value="$(arg prep)"/>
-        <param name="/seed" type="int" value="$(arg seed)"/>
-        <param name="/percategory" type="int" value="$(arg percategory)"/>
-        <param name="/obstacles" type="int" value="$(arg obstacles)"/>
-        <param name="/perrow" type="int" value="$(arg perrow)"/>
-        <param name="/drawer_open" type="bool" value="$(arg drawer_open)"/>
-        <param name="/delete_prefix" type="str" value="$(arg delete_prefix)"/>
-    </node>
-
-    <!-- Rviz -->
-    <arg name="rviz" default="true"/>
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find hma_hsr_cu_pkg)/rviz/cu.rviz" if="$(arg rviz)"/>
 </launch>

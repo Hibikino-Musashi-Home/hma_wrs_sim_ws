@@ -535,7 +535,7 @@ class GetObject(smach.State):
 
 
 class DeliverObject(smach.State):
-    """Deliver the object to designated person."""
+    """Deliver the object to designated person state."""
     def __init__(self, lib={}, robot_descriptor={}):
         smach.State.__init__(self, outcomes = ["next", "except"])
 

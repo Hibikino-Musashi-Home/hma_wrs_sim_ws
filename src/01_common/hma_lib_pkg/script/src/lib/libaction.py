@@ -75,7 +75,7 @@ class LibAction:
                               d,
                               mask,
                               specific_direction):
-        """Function of estimate grasp pose from YOLACT results.
+        """The function of estimate grasp pose from the depth image and object mask.
 
         Args:
             conv_frame (str): Name of the converted frame.
@@ -85,8 +85,8 @@ class LibAction:
             mask (sensor_msgs/Image): Mask image of the object to grasp pose estimation.
             specific_direction (int): Fix the grasping direction to be estimated.
                 Select from GraspPose.[TOP, FRONT].
-                TOP: Estimate the grasp pose only from the top.
-                FRONT: Estimate the grasp pose only from the front.
+                - TOP: Estimate the grasp pose only from the top.
+                - FRONT: Estimate the grasp pose only from the front.
 
         Returns:
             hma_common_action/GraspPoseEstimationResult: Results of grasp pose estimation.
@@ -113,23 +113,22 @@ class LibAction:
                        pose = [Pose()],
                        score = [0.0],
                        search_place = ""):
-        """Function of mapping cluttered objects.
+        """The function of mapping cluttered objects.
 
         Args:
             action (int): Select the action to be executed.
                 Select from MappingAction.[ADD, MAPPING, DELETE, DELETEALL, CHECK, GET, GETALL, GETNEAREST]
-                ADD: Recognize and add objects.
-                MAPPING: Run the mapping and save the data.
-                DELETE: Delete specific object from the mapping data.
-                DELETEALL: Delete all objects from the mapping data.
-                CHECK: Check for the existence of an object in the mapping data, and if it exists, 
-                    compare the scores and return the higher one.
-                GET: Get a specific object from the mapping data.
-                GETALL: Get all objects from the mapping data.
-                GETNEAREST: Get nearest object from the mapping data.
-            id (list[str], optional): object ID.
+                - ADD: Add objects.
+                - MAPPING: Run the mapping and save the data.
+                - DELETE: Delete specific object from the mapping data.
+                - DELETEALL: Delete all objects from the mapping data.
+                - CHECK: Check for the existence of an object in the mapping data, and if it exists, compare the scores and return the higher one.
+                - GET: Get a specific object from the mapping data.
+                - GETALL: Get all objects from the mapping data.
+                - GETNEAREST: Get nearest object from the mapping data.
+            id (list[str], optional): Object ID.
                 Required for ADD, CHECK. Defaults to "".
-            name (list[str], optional): object name.
+            name (list[str], optional): Object name.
                 Required for ADD. Defaults to "".
             pose (list[geometry_msgs/Pose], optional): 3D coordinates of a specific object.
                 Required for ADD, DELETE, CHECK, GETNEAREST. Defaults to Pose().

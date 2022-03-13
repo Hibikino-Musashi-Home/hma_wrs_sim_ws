@@ -92,8 +92,8 @@ class OmniPathFollowServer:
         """Publish the status of action.
 
         Args:
-            goal_id (_type_): _description_
-            status (_type_): _description_
+            goal_id (int): Goal ID.
+            status (int): Status.
         """
         pub = GoalStatus(goal_id=GoalID(id=str(goal_id)),
                          status=status)

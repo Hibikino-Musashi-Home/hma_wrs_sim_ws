@@ -35,8 +35,7 @@ import yaml
 
 from sensor_msgs.msg import Image
 
-from hma_yolact_action.msg import YolactAction
-from hma_yolact_action.msg import YolactGoal
+from hma_yolact_action.msg import YolactAction, YolactGoal
 
 import os
 

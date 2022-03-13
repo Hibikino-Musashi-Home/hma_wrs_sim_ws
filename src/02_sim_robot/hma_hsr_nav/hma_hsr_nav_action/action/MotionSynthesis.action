@@ -26,12 +26,12 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 geometry_msgs/Pose2D goal_place
-bool apply_start_pose
-hma_hsr_msgs/HSRJoints start_pose
-bool apply_goal_pose
-hma_hsr_msgs/HSRJoints goal_pose
-string[] exec_from_first
-geometry_msgs/Point goal_tolerance
+bool apply_start_pose # Whether start_pose is valid or not.
+hma_hsr_msgs/HSRJoints start_pose # Transition pose at the start of navigation.
+bool apply_goal_pose  # Whether goal_pose is valid or not.
+hma_hsr_msgs/HSRJoints goal_pose # Transition pose at the end of navigation.
+string[] exec_from_first # The names of the transition pose from the beginning of navigation in the goal_pose.
+geometry_msgs/Point goal_tolerance # Tolerance from the goal transitioning to goal_pose.
 ---
 bool result
 ---

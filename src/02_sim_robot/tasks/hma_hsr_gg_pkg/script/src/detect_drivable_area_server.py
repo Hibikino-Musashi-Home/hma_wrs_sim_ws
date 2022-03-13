@@ -58,6 +58,7 @@ GP_LOOP_RATE = 1.0
 
 class DetectDrivableAreaServer:
     """Detect drivable area ROS Action server."""
+    
     def __init__(self):
         self.lock = threading.Lock()
 

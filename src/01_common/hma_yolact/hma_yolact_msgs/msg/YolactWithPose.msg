@@ -26,17 +26,18 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 std_msgs/Header header
-sensor_msgs/Image rgb
-bool use_d
-sensor_msgs/Image d
-int32 amount
-string[] id
-float32[] score
-int32[] x
-int32[] y
-int32[] w
-int32[] h
-sensor_msgs/Image mask
-string frame
-bool[] is_valid_pose
-geometry_msgs/Pose[] pose
+sensor_msgs/Image rgb # The result image.
+bool use_d # Whether the Depth image was used or not.
+sensor_msgs/Image d  # The depth image.
+int32 amount # Number of recognition objects.
+string[] id # Recognition object IDs.
+float32[] score # Recognition object scores.
+int32[] x # Position x of the object in the image.
+int32[] y # Position y of the object in the image.
+int32[] w # Width of the object in the image.
+int32[] h # Height of the object in the image.
+sensor_msgs/Image mask # The result mask image. 
+                       # The mask image is represented by the pixel values of the object's index+1.
+string frame # Frame name.
+bool[] is_valid_pose # Whether the 3D pose could be calculated or not.
+geometry_msgs/Pose[] pose # Object 3D poses.

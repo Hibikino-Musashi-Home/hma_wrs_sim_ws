@@ -713,7 +713,7 @@ class GetObject(smach.State):
 
 
 class GetObjectFromUnder(smach.State):
-    """Get object from under the table."""
+    """Get object from under the table state."""
 
     def __init__(self, lib={}, robot_descriptor={}):
         smach.State.__init__(self, outcomes = ["next", "move", "loop", "except"])
@@ -837,7 +837,7 @@ class GetObjectFromUnder(smach.State):
 
 
 class PlaceObject(smach.State):
-    """Place object to deposit place."""
+    """Place object to deposit place state."""
 
     def __init__(self, lib={}, robot_descriptor={}):
         smach.State.__init__(self, outcomes = ["next", "except"])

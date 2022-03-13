@@ -31,6 +31,7 @@ import os
 import sys
 import rospy
 import threading
+import numpy as np
 
 from subprocess import Popen, call
 
@@ -60,13 +61,13 @@ class PrepareTask:
         self.gazebo_model_states = ModelStates()
 
         # ROS I/F
-        self.p_seed = rospy.get_param(rospy.get_name() + "/seed", "")
-        self.p_percategory = rospy.get_param(rospy.get_name() + "/percategory", "")
-        self.p_obstacles = rospy.get_param(rospy.get_name() + "/obstacles", "")
-        self.p_perrow = rospy.get_param(rospy.get_name() + "/perrow", "")
-        self.p_drawer = rospy.get_param(rospy.get_name() + "/drawer_open", True)
-        self.p_task = rospy.get_param(rospy.get_name() + "/task", "task")
-        self.p_prep = rospy.get_param(rospy.get_name() + "/prep", "")
+        self.p_prep = rospy.get_param(rospy.get_name() + "/prep", True)
+        self.p_seed = str(rospy.get_param(rospy.get_name() + "/seed", -1))
+        self.p_percategory = str(rospy.get_param(rospy.get_name() + "/percategory", 5))
+        self.p_obstacles = str(rospy.get_param(rospy.get_name() + "/obstacles", 3))
+        self.p_perrow = str(rospy.get_param(rospy.get_name() + "/perrow", 4))
+        self.p_drawer = rospy.get_param(rospy.get_name() + "/drawer_open", False)
+        self.p_delete_prefix = rospy.get_param(rospy.get_name() + "/delete_prefix", "task")
 
         self.sub_gazebo_model_states = rospy.Subscriber("/gazebo/model_states",
                                                         ModelStates,
@@ -165,19 +166,16 @@ class PrepareTask:
         # task preparation
         if self.p_prep:
             self.close_drawers()
-            self.delete_models(gazebo_model_states, self.p_task)
+            self.delete_models(gazebo_model_states, self.p_delete_prefix)
 
-            if self.p_seed == "":
-                cmd = "rosrun tmc_wrs_gazebo_worlds spawn_objects" \
-                    + " --percategory " + str(self.p_percategory) \
-                    + " --obstacles " + str(self.p_obstacles) \
-                    + " --perrow " + str(self.p_perrow)
-            else:
-                cmd = "rosrun tmc_wrs_gazebo_worlds spawn_objects" \
-                    + " --seed " + str(self.p_seed) \
-                    + " --percategory "+ str(self.p_percategory) \
-                    + " --obstacles " + str(self.p_obstacles) \
-                    + " --perrow " + str(self.p_perrow)
+            if int(self.p_seed) < 0:
+                self.p_seed = str(np.random.randint(0, 10000))
+                rospy.loginfo("[" + rospy.get_name() + "]: Set random seed " + str(self.p_seed))
+            cmd = "rosrun tmc_wrs_gazebo_worlds spawn_objects" \
+                + " --seed " + str(self.p_seed) \
+                + " --percategory "+ str(self.p_percategory) \
+                + " --obstacles " + str(self.p_obstacles) \
+                + " --perrow " + str(self.p_perrow)
             Popen(cmd.split(" "))
 
         rospy.sleep(30.0)

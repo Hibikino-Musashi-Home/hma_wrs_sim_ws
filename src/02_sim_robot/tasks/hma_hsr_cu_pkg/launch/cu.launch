@@ -69,14 +69,14 @@ POSSIBILITY OF SUCH DAMAGE.
     </group>
     <arg name="robot_name" default="hsrb"/>
     <group ns="$(arg robot_description)_kinematics">
-      <rosparam command="load" file="$(find hma_hsr_gg_pkg)/io/moveit/kinematics.yaml"/>
+      <rosparam command="load" file="$(find hma_hsr_sim_pkg)/io/moveit/kinematics.yaml"/>
       <rosparam param="robot_name" subst_value="true">$(arg robot_name)</rosparam>
     </group>
     <node pkg="rosservice" type="rosservice" name="move_group_log" args="call /move_group/set_logger_level ros ERROR" /> <!-- Disable warning log -->
 
     <!-- Mapping -->
     <node pkg="hma_common_pkg" type="mapping_object_server.py" name="mapping_object_server" output="screen" respawn="true">
-        <param name="/area_data" type="str" value="$(find hma_hsr_cu_pkg)/io/mapping_area/area.json"/>
+        <param name="/area_data_path" type="str" value="$(find hma_hsr_cu_pkg)/io/mapping_area/area.json"/>
     </node>
 
     <!-- Navigation -->

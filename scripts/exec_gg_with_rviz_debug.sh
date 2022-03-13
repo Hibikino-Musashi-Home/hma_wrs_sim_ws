@@ -1,1 +1,0 @@
-roslaunch hma_hsr_gg_pkg gg_debug.launch

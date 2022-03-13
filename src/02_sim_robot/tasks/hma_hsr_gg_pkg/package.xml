@@ -38,5 +38,6 @@
   <exec_depend>actionlib_msgs</exec_depend>
 
   <export>
+    <rosdoc config="rosdoc.yaml" />
   </export>
 </package>
