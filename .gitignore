@@ -1,0 +1,7 @@
+!.gitignore
+build/
+devel/
+logs/
+.catkin_tools
+*.pyc
+*.pth
