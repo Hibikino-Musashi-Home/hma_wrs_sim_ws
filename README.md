@@ -2,7 +2,10 @@
   <img src="resources/hma_logo.png" width="300"/>
   <div align="center">
     <a href="https://www.brain.kyutech.ac.jp/~hma/">
-      <b><font size="5">Hibikino-Musashi@Home website</font></b>
+      <b><font size="5">Hibikino-Musashi@Home website</font></b><br>
+    </a>
+    <a href="https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/">
+      <b><font size="4">Documentation</font></b><br>
     </a>
   </div><br><br>
   <img src="resources/mapping.png" width="500"/>&nbsp;&nbsp;
@@ -27,6 +30,7 @@ Please perform the docker installation described in the [WRS Simulator](https://
 ```
 $ mkdir -p ~/ros_ws/hma && cd ~/ros_ws/hma
 $ git clone --recursive https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws.git
+$ source /opt/ros/melodic/setup.bash
 $ catkin build
 ```
 
