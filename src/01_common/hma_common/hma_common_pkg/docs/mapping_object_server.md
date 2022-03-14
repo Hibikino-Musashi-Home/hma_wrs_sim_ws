@@ -52,11 +52,11 @@ Publish markers for visualization of the specified area.
 
 **~points ([visualization_msgs/Marker.msg](http://docs.ros.org/en/api/visualization_msgs/html/msg/Marker.html))**
 
-Publish markers for visualization indicating the location of mapping　objects.
+Publish markers for visualization indicating the location of mapping objects.
 
 **~text ([visualization_msgs/Marker.msg](http://docs.ros.org/en/api/visualization_msgs/html/msg/Marker.html))**
 
-Publish markers for visualization indicating the name of mapping　objects.
+Publish markers for visualization indicating the name of mapping objects.
 
 ### Action servers
 **mapping_object ([hma_common_action/MappingObjectAction]())**
