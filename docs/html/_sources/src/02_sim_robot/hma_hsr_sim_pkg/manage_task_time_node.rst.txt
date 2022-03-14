@@ -1,0 +1,8 @@
+manage\_task\_time\_node
+========================
+Manage the task time.
+
+.. automodule:: manage_task_time_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

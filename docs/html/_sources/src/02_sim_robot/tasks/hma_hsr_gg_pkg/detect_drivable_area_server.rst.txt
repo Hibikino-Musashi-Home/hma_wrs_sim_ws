@@ -1,0 +1,8 @@
+detect\_drivable\_area\_server
+==============================
+Detects the drivable area.
+
+.. automodule:: detect_drivable_area_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

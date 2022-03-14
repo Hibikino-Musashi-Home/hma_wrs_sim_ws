@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libhsrnav &mdash; Hibikino-Musashi@Home workspace for the WRS Simulator 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="manage_cmd_vel_node" href="manage_cmd_vel_node.html" />
+    <link rel="prev" title="hsr_nav_import" href="hsr_nav_import.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Hibikino-Musashi@Home workspace for the WRS Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../01_common/01_common.html">01_common</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../02_sim_robot.html">02_sim_robot</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../hma_hsr_msgs/index.html">hma_hsr_msgs</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../hma_hsr_nav.html">hma_hsr_nav</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../hma_hsr_nav_action/index.html">hma_hsr_nav_action</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">hma_hsr_nav_pkg</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="modules.html">Imports</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="modules.html#libraries">Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#nodes">Nodes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules.html#action-servers">Action servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../hma_hsr_sim_lib_pkg/index.html">hma_hsr_sim_lib_pkg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../hma_hsr_sim_pkg/index.html">hma_hsr_sim_pkg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tasks/tasks.html">tasks</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Hibikino-Musashi@Home workspace for the WRS Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../02_sim_robot.html">02_sim_robot</a> &raquo;</li>
+          <li><a href="../hma_hsr_nav.html">hma_hsr_nav</a> &raquo;</li>
+          <li><a href="index.html">hma_hsr_nav_pkg</a> &raquo;</li>
+          <li><a href="modules.html">Imports</a> &raquo;</li>
+      <li>libhsrnav</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/src/02_sim_robot/hma_hsr_nav/hma_hsr_nav_pkg/libhsrnav.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="libhsrnav">
+<h1>libhsrnav<a class="headerlink" href="#libhsrnav" title="Permalink to this headline"></a></h1>
+<p>Library for HSR navigation.</p>
+<span class="target" id="module-libhsrnav"></span><dl class="py class">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">libhsrnav.</span></span><span class="sig-name descname"><span class="pre">LibHSRNav</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libutil</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libtf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libhsrutil</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>HSR Navigation library.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav.cancel_path_follow_goals">
+<span class="sig-name descname"><span class="pre">cancel_path_follow_goals</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav.cancel_path_follow_goals" title="Permalink to this definition"></a></dt>
+<dd><p>Cancel Path Follow action.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav.go_abs">
+<span class="sig-name descname"><span class="pre">go_abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'map'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vel_minmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_synthesis_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav.go_abs" title="Permalink to this definition"></a></dt>
+<dd><p>Move in absolute coordinates. It loops infinitely until the goal is reached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose</strong> (<em>geometry_msgs/Pose2D</em><em>, </em><em>list</em><em>[</em><em>geometry_msgs/Pose2D</em><em>]</em>) – Goal place positions.
+Multiple positions can also be specified in a list.
+In such a case, the robot is moved in order.</p></li>
+<li><p><strong>frame</strong> (<em>str</em>) – The name of reference frame.</p></li>
+<li><p><strong>vel_minmax</strong> (<em>list</em>) – Minimum and maximum velocities.</p></li>
+<li><p><strong>motion_synthesis_config</strong> (<em>dict</em><em>, </em><em>optional</em>) – <p>If you want to apply the motion synthesis, set the configuration.
+Defaults to {} (Disable).
+The keys for config are as follows,</p>
+<blockquote>
+<div><blockquote>
+<div><p>If “auto” is specified, it is automatically set to the go posture of HSR.</p>
+</div></blockquote>
+<p>goal_pose: Transition posture at goal.
+exec_from_first: Joint name list to transition from the first.</p>
+<blockquote>
+<div><p>If “all” is specified, all specified joints execute from first.</p>
+</div></blockquote>
+<p>goal_tolerance: Timing of starting motion synthesis (distance from the goal).
+is_wait: Whether to wait for the completion of motion synthesis.</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">base_go_abs</span><span class="p">(</span><span class="n">Pose2D</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.57</span><span class="p">),</span>
+<span class="go">                motion_synthesis_config={&quot;start_pose&quot;:&quot;auto&quot;,</span>
+<span class="go">                                         &quot;goal_pose&quot;:{&quot;arm_lift_joint&quot;: 0.1, ...},</span>
+<span class="go">                                         &quot;exec_from_first&quot;: [&quot;arm_lift_joint&quot;]},</span>
+<span class="go">                                         &quot;goal_tolerance&quot;: Point(0.3, 0.3, 0.0),</span>
+<span class="go">                                         &quot;is_wait&quot;: True)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav.set_change_vel_enable">
+<span class="sig-name descname"><span class="pre">set_change_vel_enable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav.set_change_vel_enable" title="Permalink to this definition"></a></dt>
+<dd><p>Set with/without velocity change.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – enable or disable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrnav.LibHSRNav.set_min_max_vel">
+<span class="sig-name descname"><span class="pre">set_min_max_vel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min_linear_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_linear_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_angular_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_angular_vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrnav.LibHSRNav.set_min_max_vel" title="Permalink to this definition"></a></dt>
+<dd><p>Change minimum and maximum velocities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>min_linear_vel</strong> (<em>float</em><em>, </em><em>optional</em>) – minimum linear velocity. Defaults to GP_MIN_LINEAR_VEL.</p></li>
+<li><p><strong>max_linear_vel</strong> (<em>float</em><em>, </em><em>optional</em>) – maximum linear velocity. Defaults to GP_MAX_LINEAR_VEL.</p></li>
+<li><p><strong>min_angular_vel</strong> (<em>float</em><em>, </em><em>optional</em>) – minimum angular velocity. Defaults to GP_MIN_ANGULAR_VEL.</p></li>
+<li><p><strong>max_angular_vel</strong> (<em>float</em><em>, </em><em>optional</em>) – maximum angular velocity. Defaults to GP_MAX_ANGULAR_VEL.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hsr_nav_import.html" class="btn btn-neutral float-left" title="hsr_nav_import" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="manage_cmd_vel_node.html" class="btn btn-neutral float-right" title="manage_cmd_vel_node" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hibikino-Musashi@Home.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

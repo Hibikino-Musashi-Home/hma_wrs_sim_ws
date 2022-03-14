@@ -1,0 +1,8 @@
+libyolact
+=========
+Library for YolactEdge.
+
+.. automodule:: libyolact
+   :members:
+   :undoc-members:
+   :show-inheritance:

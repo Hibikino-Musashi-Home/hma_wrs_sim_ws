@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libtf &mdash; Hibikino-Musashi@Home workspace for the WRS Simulator 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="libpub" href="libpub.html" />
+    <link rel="prev" title="libopencv" href="libopencv.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Hibikino-Musashi@Home workspace for the WRS Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../01_common.html">01_common</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hma_common/hma_common.html">hma_common</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hma_ii_pkg/index.html">hma_ii_pkg</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">hma_lib_pkg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Libraries</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="libutil.html">libutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libopencv.html">libopencv</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">libtf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libpub.html">libpub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libaction.html">libaction</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hma_yolact/hma_yolact.html">hma_yolact</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_sim_robot/02_sim_robot.html">02_sim_robot</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hibikino-Musashi@Home workspace for the WRS Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../01_common.html">01_common</a> &raquo;</li>
+          <li><a href="index.html">hma_lib_pkg</a> &raquo;</li>
+          <li><a href="modules.html">Libraries</a> &raquo;</li>
+      <li>libtf</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/src/01_common/hma_lib_pkg/libtf.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="libtf">
+<h1>libtf<a class="headerlink" href="#libtf" title="Permalink to this headline"></a></h1>
+<p>Library for coordinate transformation using TF.</p>
+<span class="target" id="module-libtf"></span><dl class="py class">
+<dt class="sig sig-object py" id="libtf.LibTF">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">libtf.</span></span><span class="sig-name descname"><span class="pre">LibTF</span></span><a class="headerlink" href="#libtf.LibTF" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Coordinate transformation library using TF.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.euler2quaternion">
+<span class="sig-name descname"><span class="pre">euler2quaternion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">euler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.euler2quaternion" title="Permalink to this definition"></a></dt>
+<dd><p>Convert from euler angles to quaternion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>euler</strong> (<em>geometry_msgs/Pose2D</em><em>, </em><em>geometry_msgs/Point</em><em>, </em><em>list</em>) – Euler angles before conversion.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Quaternion.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geometry_msgs/Quaternion</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.frame_exists">
+<span class="sig-name descname"><span class="pre">frame_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.frame_exists" title="Permalink to this definition"></a></dt>
+<dd><p>Check for the exists of frames.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>frame</strong> (<em>str</em>) – Name of the check frame.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Whether it exists or not.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.get_pose_with_offset">
+<span class="sig-name descname"><span class="pre">get_pose_with_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conv_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.get_pose_with_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Coordinate transformation with offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conv_frame</strong> (<em>str</em>) – Name of the converted frame.</p></li>
+<li><p><strong>origin_frame</strong> (<em>str</em>) – Name of the original frame.</p></li>
+<li><p><strong>buf_frame</strong> (<em>str</em>) – Name of the buffer frame.</p></li>
+<li><p><strong>pose</strong> (<em>geometry_msgs/Pose</em>) – Amount of offset from the coordinate system before transformation.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Transformed pose.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geometry_msgs/Pose</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.get_pose_without_offset">
+<span class="sig-name descname"><span class="pre">get_pose_without_offset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conv_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_frame</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.get_pose_without_offset" title="Permalink to this definition"></a></dt>
+<dd><p>Coordinate transformation without offset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conv_frame</strong> (<em>str</em>) – Name of the converted frame.</p></li>
+<li><p><strong>origin_frame</strong> (<em>str</em>) – Name of the original frame.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Transformed pose.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>geometry_msgs/Pose</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.quaternion2euler">
+<span class="sig-name descname"><span class="pre">quaternion2euler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quaternion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.quaternion2euler" title="Permalink to this definition"></a></dt>
+<dd><p>Convert from quaternion to euler angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>quaternion</strong> (<em>geometry_msgs/Quaternion</em>) – Quaternion before conversion.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>roll, pitch, yaw [rad].</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libtf.LibTF.send_transform">
+<span class="sig-name descname"><span class="pre">send_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conv_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin_frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libtf.LibTF.send_transform" title="Permalink to this definition"></a></dt>
+<dd><p>Coordinate transformation broadcast function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conv_frame</strong> (<em>str</em>) – Name of the converted frame.</p></li>
+<li><p><strong>origin_frame</strong> (<em>str</em>) – Name of the original frame.</p></li>
+<li><p><strong>pose</strong> (<em>geometry_msgs/Pose</em>) – Amount of offset from the coordinate system before transformation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="libopencv.html" class="btn btn-neutral float-left" title="libopencv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="libpub.html" class="btn btn-neutral float-right" title="libpub" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hibikino-Musashi@Home.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

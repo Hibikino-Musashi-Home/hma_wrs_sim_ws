@@ -1,0 +1,8 @@
+motion\_synthesis\_server
+=========================
+Provide functions for simultaneous navigation and posture transition.
+
+.. automodule:: motion_synthesis_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

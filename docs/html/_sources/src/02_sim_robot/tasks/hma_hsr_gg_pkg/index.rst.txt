@@ -1,0 +1,16 @@
+.. hma_hsr_gg_pkg documentation master file, created by
+   sphinx-quickstart on Mon Mar 14 15:16:16 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+hma_hsr_gg_pkg
+==============
+The package for the Go and Get It task (Task 2 in the WRS).
+
+For details of the rules, please `see <https://cdn.robocup.org/athome/wp/2021/06/2021_rulebook.pdf>`_.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules

@@ -1,0 +1,8 @@
+libhsrmoveit
+============
+Library for MoveIt of HSR.
+
+.. automodule:: libhsrmoveit
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,8 @@
+estimate\_orientation\_node
+===========================
+Estimates cutlery and marker orientation.
+
+.. automodule:: estimate_orientation_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

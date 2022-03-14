@@ -1,0 +1,8 @@
+yolact\_server
+==============
+Recognize objects from an image using YolactEdge.
+
+.. automodule:: yolact_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

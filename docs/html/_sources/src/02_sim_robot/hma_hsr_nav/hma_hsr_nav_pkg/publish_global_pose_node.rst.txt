@@ -1,0 +1,8 @@
+publish\_global\_pose\_node
+===========================
+Publish global pose of HSR.
+
+.. automodule:: publish_global_pose_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

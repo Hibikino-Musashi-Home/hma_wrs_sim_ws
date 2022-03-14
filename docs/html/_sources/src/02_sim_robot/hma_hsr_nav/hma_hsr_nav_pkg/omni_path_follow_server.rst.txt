@@ -1,0 +1,8 @@
+omni\_path\_follow\_server
+==========================
+Path following for navigation.
+
+.. automodule:: omni_path_follow_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

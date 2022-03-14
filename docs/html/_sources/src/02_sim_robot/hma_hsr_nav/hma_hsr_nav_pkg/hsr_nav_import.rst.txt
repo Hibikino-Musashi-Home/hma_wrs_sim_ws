@@ -1,0 +1,46 @@
+hsr\_nav\_import
+================
+Importing commonly used HSR navigation.
+
+Imports
+-------
+.. code-block:: python
+
+   import numpy as np
+
+   from actionlib_msgs.msg import GoalID, GoalStatus
+   from nav_msgs.srv import GetPlan
+   from tmc_omni_path_follower.msg import PathFollowerAction
+   from tmc_omni_path_follower.msg import PathFollowerActionGoal
+
+   from hma_hsr_nav_action.msg import MotionSynthesisAction
+   from hma_hsr_nav_action.msg import MotionSynthesisGoal
+   from hma_hsr_nav_action.msg import MotionSynthesisFeedback
+   from hma_hsr_nav_action.msg import MotionSynthesisResult
+
+   from hma_hsr_nav_action.msg import OmniPathFollowerAction
+   from hma_hsr_nav_action.msg import OmniPathFollowerGoal
+   from hma_hsr_nav_action.msg import OmniPathFollowerFeedback
+   from hma_hsr_nav_action.msg import OmniPathFollowerResult
+
+
+Globals
+-------
+.. code-block:: python
+
+   GP_MIN_LINEAR_VEL  = 0.0 # Minimum linear speed
+   GP_MAX_LINEAR_VEL  = 0.4 # Maximum linear speed
+   GP_MIN_ANGULAR_VEL = 0.0 # Minimum angular speed
+   GP_MAX_ANGULAR_VEL = 1.5 # Maximum angular speed
+
+   from enum import IntEnum
+   class NavState(IntEnum):
+      INIT = -1
+      START = 0
+      ACTIVE = 1
+      SUCCESS = 2
+      FAILURE = 3
+
+   class PathFollow(IntEnum):
+      START = 0
+      CANCEL = 1

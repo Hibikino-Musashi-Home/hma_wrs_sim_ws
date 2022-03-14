@@ -1,0 +1,8 @@
+libhsrpub
+=========
+Library for ROS Publish of HSR.
+
+.. automodule:: libhsrpub
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,8 @@
+libhsrutil
+==========
+Library for utility functions of HSR.
+
+.. automodule:: libhsrutil
+   :members:
+   :undoc-members:
+   :show-inheritance:

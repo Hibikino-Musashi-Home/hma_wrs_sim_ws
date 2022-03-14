@@ -1,0 +1,8 @@
+libaction
+=========
+Library for ROS Actions.
+
+.. automodule:: libaction
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,8 @@
+get\_pose\_node
+===============
+Get the current position of the robot on the map.
+
+.. automodule:: get_pose_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

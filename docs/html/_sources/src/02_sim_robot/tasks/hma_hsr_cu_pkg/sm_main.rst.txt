@@ -1,0 +1,8 @@
+sm\_main
+--------
+Main source code of state machine.
+
+.. automodule:: sm_main
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,8 @@
+manage\_cmd\_vel\_node
+======================
+Manage the command_velocity of HSR.
+
+.. automodule:: manage_cmd_vel_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

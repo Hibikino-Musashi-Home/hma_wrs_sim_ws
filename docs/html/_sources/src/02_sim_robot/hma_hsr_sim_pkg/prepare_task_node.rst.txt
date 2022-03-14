@@ -1,0 +1,8 @@
+prepare\_task\_node
+===================
+Prepare the environment required for the task.
+
+.. automodule:: prepare_task_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

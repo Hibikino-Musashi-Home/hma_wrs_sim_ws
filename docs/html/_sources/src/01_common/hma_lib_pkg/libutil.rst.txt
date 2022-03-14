@@ -1,0 +1,8 @@
+libutil
+=======
+Library for utility functions.
+
+.. automodule:: libutil
+   :members:
+   :undoc-members:
+   :show-inheritance:

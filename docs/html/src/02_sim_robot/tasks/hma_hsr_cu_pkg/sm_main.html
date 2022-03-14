@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sm_main &mdash; Hibikino-Musashi@Home workspace for the WRS Simulator 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Hibikino-Musashi@Home workspace for the WRS Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../01_common/01_common.html">01_common</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_sim_robot.html">02_sim_robot</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Hibikino-Musashi@Home workspace for the WRS Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>sm_main</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/src/02_sim_robot/tasks/hma_hsr_cu_pkg/sm_main.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sm-main">
+<h1>sm_main<a class="headerlink" href="#sm-main" title="Permalink to this headline"></a></h1>
+<p>Main source code of state machine.</p>
+<span class="target" id="module-sm_main"></span><dl class="py class">
+<dt class="sig sig-object py" id="sm_main.DeliverObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">DeliverObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.DeliverObject" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Deliver the object to designated person state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.DeliverObject.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.DeliverObject.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.End">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">End</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.End" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>End state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.End.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.End.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.EnterToRoom2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">EnterToRoom2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.EnterToRoom2" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Enter to Room 2 state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.EnterToRoom2.af_detect_drivable_area">
+<span class="sig-name descname"><span class="pre">af_detect_drivable_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_pose</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.EnterToRoom2.af_detect_drivable_area" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.EnterToRoom2.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.EnterToRoom2.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.Except">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">Except</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Except" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Except state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.Except.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Except.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.GetObject">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">GetObject</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GetObject" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Get object from the shelf state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.GetObject.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GetObject.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.GetObject.subf_message">
+<span class="sig-name descname"><span class="pre">subf_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GetObject.subf_message" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.GoToRecPlace">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">GoToRecPlace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GoToRecPlace" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Go to recognition place state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.GoToRecPlace.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GoToRecPlace.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.GoToShelf">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">GoToShelf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GoToShelf" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Go to shelf state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.GoToShelf.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.GoToShelf.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.Init">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">Init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Init" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Initialize state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.Init.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Init.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.Start">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">Start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Start" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Start state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.Start.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Start.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sm_main.Wait4Start">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sm_main.</span></span><span class="sig-name descname"><span class="pre">Wait4Start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot_descriptor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Wait4Start" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">smach.state.State</span></code></p>
+<p>Wait for start state.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sm_main.Wait4Start.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">userdata</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sm_main.Wait4Start.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Called when executing a state.
+In the base class this raises a NotImplementedError.</p>
+<p>&#64;type ud: L{UserData} structure
+&#64;param ud: Userdata for the scope in which this state is executing</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hibikino-Musashi@Home.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+hma_common
+==========
+The packages for common functions.
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents:
+
+   hma_common_action/index
+   hma_common_pkg/index

@@ -1,0 +1,8 @@
+libhsrsub
+=========
+Library for ROS Subscribe of HSR.
+
+.. automodule:: libhsrsub
+   :members:
+   :undoc-members:
+   :show-inheritance:

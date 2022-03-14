@@ -1,0 +1,8 @@
+libhsrnav
+=========
+Library for HSR navigation.
+
+.. automodule:: libhsrnav
+   :members:
+   :undoc-members:
+   :show-inheritance:

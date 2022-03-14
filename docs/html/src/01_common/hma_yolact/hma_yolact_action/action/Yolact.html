@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>hma_yolact_action/Yolact Documentation</title>
+<link type="text/css" rel="stylesheet" href="../msg-styles.css" />
+</head>
+<body>
+
+<div id="container">
+
+<h1 class="msg-title"><a href="../index-msg.html">hma_yolact_action</a>/Yolact Action</h1>
+
+<div class="msg">
+
+<h2>File: <span class="filename">hma_yolact_action/Yolact.action</filename></h2>
+
+<h2>Action Definition</h2>
+
+<div class="raw-msg">
+<font color="blue">#&nbsp;Copyright&nbsp;(c)&nbsp;2022&nbsp;Hibikino-Musashi@Home</font><br/><font color="blue">#&nbsp;All&nbsp;rights&nbsp;reserved.</font><br/><br/><font color="blue">#&nbsp;Redistribution&nbsp;and&nbsp;use&nbsp;in&nbsp;source&nbsp;and&nbsp;binary&nbsp;forms,&nbsp;with&nbsp;or&nbsp;without</font><br/><font color="blue">#&nbsp;modification,&nbsp;are&nbsp;permitted&nbsp;provided&nbsp;that&nbsp;the&nbsp;following&nbsp;conditions&nbsp;are&nbsp;met:</font><br/><br/><font color="blue">#&nbsp;&nbsp;*&nbsp;Redistributions&nbsp;of&nbsp;source&nbsp;code&nbsp;must&nbsp;retain&nbsp;the&nbsp;above&nbsp;copyright&nbsp;notice,</font><br/><font color="blue">#&nbsp;&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer.</font><br/><font color="blue">#&nbsp;&nbsp;*&nbsp;Redistributions&nbsp;in&nbsp;binary&nbsp;form&nbsp;must&nbsp;reproduce&nbsp;the&nbsp;above&nbsp;copyright</font><br/><font color="blue">#&nbsp;&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer&nbsp;in&nbsp;the</font><br/><font color="blue">#&nbsp;&nbsp;documentation&nbsp;and/or&nbsp;other&nbsp;materials&nbsp;provided&nbsp;with&nbsp;the&nbsp;distribution.</font><br/><font color="blue">#&nbsp;&nbsp;*&nbsp;Neither&nbsp;the&nbsp;name&nbsp;of&nbsp;Hibikino-Musashi@Home&nbsp;nor&nbsp;the&nbsp;names&nbsp;of&nbsp;its</font><br/><font color="blue">#&nbsp;&nbsp;contributors&nbsp;may&nbsp;be&nbsp;used&nbsp;to&nbsp;endorse&nbsp;or&nbsp;promote&nbsp;products&nbsp;derived&nbsp;from</font><br/><font color="blue">#&nbsp;&nbsp;this&nbsp;software&nbsp;without&nbsp;specific&nbsp;prior&nbsp;written&nbsp;permission.</font><br/><br/><font color="blue">#&nbsp;THIS&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;BY&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;AND&nbsp;CONTRIBUTORS&nbsp;"AS&nbsp;IS"</font><br/><font color="blue">#&nbsp;AND&nbsp;ANY&nbsp;EXPRESS&nbsp;OR&nbsp;IMPLIED&nbsp;WARRANTIES,&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;THE</font><br/><font color="blue">#&nbsp;IMPLIED&nbsp;WARRANTIES&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE</font><br/><font color="blue">#&nbsp;ARE&nbsp;DISCLAIMED.&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;COPYRIGHT&nbsp;OWNER&nbsp;OR&nbsp;CONTRIBUTORS&nbsp;BE</font><br/><font color="blue">#&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;DIRECT,&nbsp;INDIRECT,&nbsp;INCIDENTAL,&nbsp;SPECIAL,&nbsp;EXEMPLARY,&nbsp;OR</font><br/><font color="blue">#&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;(INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED&nbsp;TO,&nbsp;PROCUREMENT&nbsp;OF</font><br/><font color="blue">#&nbsp;SUBSTITUTE&nbsp;GOODS&nbsp;OR&nbsp;SERVICES;&nbsp;LOSS&nbsp;OF&nbsp;USE,&nbsp;DATA,&nbsp;OR&nbsp;PROFITS;&nbsp;OR&nbsp;BUSINESS</font><br/><font color="blue">#&nbsp;INTERRUPTION)&nbsp;HOWEVER&nbsp;CAUSED&nbsp;AND&nbsp;ON&nbsp;ANY&nbsp;THEORY&nbsp;OF&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN</font><br/><font color="blue">#&nbsp;CONTRACT,&nbsp;STRICT&nbsp;LIABILITY,&nbsp;OR&nbsp;TORT&nbsp;(INCLUDING&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHERWISE)</font><br/><font color="blue">#&nbsp;ARISING&nbsp;IN&nbsp;ANY&nbsp;WAY&nbsp;OUT&nbsp;OF&nbsp;THE&nbsp;USE&nbsp;OF&nbsp;THIS&nbsp;SOFTWARE,&nbsp;EVEN&nbsp;IF&nbsp;ADVISED&nbsp;OF&nbsp;THE</font><br/><font color="blue">#&nbsp;POSSIBILITY&nbsp;OF&nbsp;SUCH&nbsp;DAMAGE.</font><br/><br/>sensor_msgs/Image&nbsp;rgb&nbsp;<font color="blue">#&nbsp;RGB&nbsp;image.&nbsp;It&nbsp;is&nbsp;automatically&nbsp;subscribed&nbsp;from&nbsp;the&nbsp;specified&nbsp;topic&nbsp;at&nbsp;startup&nbsp;if&nbsp;not&nbsp;set.</font><br/>sensor_msgs/Image&nbsp;d&nbsp;<font color="blue">#&nbsp;Depth&nbsp;image.&nbsp;It&nbsp;is&nbsp;automatically&nbsp;subscribed&nbsp;from&nbsp;the&nbsp;specified&nbsp;topic&nbsp;at&nbsp;startup&nbsp;if&nbsp;not&nbsp;set.</font><br/>float32&nbsp;max_distance&nbsp;<font color="blue">#&nbsp;The&nbsp;maximum&nbsp;distance&nbsp;to&nbsp;be&nbsp;recognized.</font><br/>string&nbsp;specific_id&nbsp;<font color="blue">#&nbsp;Specify&nbsp;a&nbsp;specific&nbsp;ID&nbsp;to&nbsp;be&nbsp;recognized.</font><br/>bool&nbsp;show_name&nbsp;<font color="blue">#&nbsp;The&nbsp;name,&nbsp;not&nbsp;the&nbsp;ID,&nbsp;is&nbsp;displayed&nbsp;on&nbsp;the&nbsp;published&nbsp;image&nbsp;for&nbsp;visualization.&nbsp;</font><br/>---<br/>bool&nbsp;result&nbsp;<font color="blue">#&nbsp;Whether&nbsp;the&nbsp;action&nbsp;was&nbsp;successful&nbsp;or&nbsp;not.</font><br/>hma_yolact_msgs/YolactWithoutPose&nbsp;without_pose&nbsp;<font color="blue">#&nbsp;The&nbsp;recognition&nbsp;results.</font><br/>hma_yolact_msgs/YolactWithPose&nbsp;with_pose&nbsp;<font color="blue">#&nbsp;The&nbsp;recognition&nbsp;results&nbsp;with&nbsp;the&nbsp;3D&nbsp;pose.</font><br/>---<br/>bool&nbsp;feedback<br/>
+</div>
+
+
+</div>
+
+<p class="footer"><small><em>autogenerated on Mon, 14 Mar 2022 12:41:45</em></small></p>
+
+</div>
+
+</body>
+</html>

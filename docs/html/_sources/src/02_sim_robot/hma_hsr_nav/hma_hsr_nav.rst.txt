@@ -1,0 +1,10 @@
+hma_hsr_nav
+===========
+The packages for HSR navigation.
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Contents:
+
+   hma_hsr_nav_action/index
+   hma_hsr_nav_pkg/index

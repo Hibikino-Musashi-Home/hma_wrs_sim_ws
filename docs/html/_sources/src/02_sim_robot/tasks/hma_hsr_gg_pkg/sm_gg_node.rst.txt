@@ -1,0 +1,10 @@
+sm\_gg\_node
+============
+A state machine for executing the task.
+
+.. automodule:: sm_gg_node
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. include:: sm_main.rst

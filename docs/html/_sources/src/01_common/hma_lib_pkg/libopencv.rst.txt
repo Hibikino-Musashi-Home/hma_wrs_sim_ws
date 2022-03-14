@@ -1,0 +1,8 @@
+libopencv
+=========
+Library for converts between ROS Image messages and OpenCV images using CvBridge.
+
+.. automodule:: libopencv
+   :members:
+   :undoc-members:
+   :show-inheritance:

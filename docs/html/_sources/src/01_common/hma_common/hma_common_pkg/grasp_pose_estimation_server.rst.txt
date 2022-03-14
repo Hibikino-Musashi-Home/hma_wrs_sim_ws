@@ -1,0 +1,8 @@
+grasp\_pose\_estimation\_server
+===============================
+Estimate object grasping poses using 3D point cloud and PCA.
+
+.. automodule:: grasp_pose_estimation_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

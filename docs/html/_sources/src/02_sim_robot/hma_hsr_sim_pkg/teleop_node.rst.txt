@@ -1,0 +1,8 @@
+teleop\_node
+============
+Teleoperate HSR on the simulator.
+
+.. automodule:: teleop_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

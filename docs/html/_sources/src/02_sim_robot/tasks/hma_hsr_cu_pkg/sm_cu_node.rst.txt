@@ -1,0 +1,10 @@
+sm\_cu\_node
+============
+A state machine for executing the task.
+
+.. automodule:: sm_cu_node
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. include:: sm_main.rst

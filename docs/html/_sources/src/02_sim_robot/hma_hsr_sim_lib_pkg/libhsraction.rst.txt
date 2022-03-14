@@ -1,0 +1,8 @@
+libhsraction
+============
+Library for ROS Actions of HSR.
+
+.. automodule:: libhsraction
+   :members:
+   :undoc-members:
+   :show-inheritance:

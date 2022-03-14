@@ -1,0 +1,44 @@
+common\_import
+==============
+Importing commonly used libraries and defining global parameters.
+
+Imports
+-------
+.. code-block:: python
+
+   import sys
+   import os
+   import math
+   import numpy as np
+   import copy
+   import csv
+   import time
+   import random
+   import re
+   import threading
+   import glob
+   import cv2
+   import json
+
+   from enum import IntEnum
+   from subprocess import Popen, call, PIPE
+
+Globals
+-------
+.. code-block:: python
+
+   class GraspPose(IntEnum):
+      """ Defining directions for grasp pose estimation."""
+      TOP = 0
+      FRONT = 1
+
+   class MappingAction(IntEnum):
+      """ Defining actions for mapping objects."""
+      ADD = 0
+      MAPPING = 1
+      DELETE = 2
+      DELETEALL = 3
+      CHECK = 4
+      GET = 5
+      GETALL = 6
+      GETNEAREST = 7

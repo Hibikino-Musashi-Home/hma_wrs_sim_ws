@@ -1,0 +1,8 @@
+libsm
+=====
+Library for state machine.
+
+.. automodule:: libsm
+   :members:
+   :undoc-members:
+   :show-inheritance:

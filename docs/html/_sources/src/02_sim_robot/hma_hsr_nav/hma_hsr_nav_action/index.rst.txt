@@ -1,0 +1,8 @@
+.. hma_hsr_nav_action documentation master file, created by
+   sphinx-quickstart on Mon Mar 14 09:54:46 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+hma_hsr_nav_action
+==================
+The actions for HSR navigation.

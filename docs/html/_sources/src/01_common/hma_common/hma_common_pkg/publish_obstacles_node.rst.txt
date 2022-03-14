@@ -1,0 +1,8 @@
+publish\_obstacles\_node
+========================
+Publish obstacles topics for navigation.
+
+.. automodule:: publish_obstacles_node
+   :members:
+   :undoc-members:
+   :show-inheritance:

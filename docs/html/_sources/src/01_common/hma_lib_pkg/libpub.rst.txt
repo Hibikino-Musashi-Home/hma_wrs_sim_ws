@@ -1,0 +1,8 @@
+libpub
+======
+Library for ROS Publish.
+
+.. automodule:: libpub
+   :members:
+   :undoc-members:
+   :show-inheritance:

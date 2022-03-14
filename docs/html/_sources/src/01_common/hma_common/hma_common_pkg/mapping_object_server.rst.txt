@@ -1,0 +1,8 @@
+mapping\_object\_server
+=======================
+Mapping of object positions for strategic tidy-up.
+
+.. automodule:: mapping_object_server
+   :members:
+   :undoc-members:
+   :show-inheritance:

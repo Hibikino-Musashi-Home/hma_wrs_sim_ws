@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>libhsrmoveit &mdash; Hibikino-Musashi@Home workspace for the WRS Simulator 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="hma_hsr_sim_pkg" href="../hma_hsr_sim_pkg/index.html" />
+    <link rel="prev" title="libhsraction" href="libhsraction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> Hibikino-Musashi@Home workspace for the WRS Simulator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../01_common/01_common.html">01_common</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../02_sim_robot.html">02_sim_robot</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hma_hsr_msgs/index.html">hma_hsr_msgs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hma_hsr_nav/hma_hsr_nav.html">hma_hsr_nav</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">hma_hsr_sim_lib_pkg</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="modules.html">Libraries</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="libhsrutil.html">libhsrutil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhsrpub.html">libhsrpub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhsrsub.html">libhsrsub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="libhsraction.html">libhsraction</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">libhsrmoveit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../hma_hsr_sim_pkg/index.html">hma_hsr_sim_pkg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tasks/tasks.html">tasks</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">Hibikino-Musashi@Home workspace for the WRS Simulator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../02_sim_robot.html">02_sim_robot</a> &raquo;</li>
+          <li><a href="index.html">hma_hsr_sim_lib_pkg</a> &raquo;</li>
+          <li><a href="modules.html">Libraries</a> &raquo;</li>
+      <li>libhsrmoveit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/src/02_sim_robot/hma_hsr_sim_lib_pkg/libhsrmoveit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="libhsrmoveit">
+<h1>libhsrmoveit<a class="headerlink" href="#libhsrmoveit" title="Permalink to this headline"></a></h1>
+<p>Library for MoveIt of HSR.</p>
+<span class="target" id="module-libhsrmoveit"></span><dl class="py class">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">libhsrmoveit.</span></span><span class="sig-name descname"><span class="pre">LibHSRMoveit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">libtf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libhsrutil</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">libhsrpub</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>HSR MoveIt library for WRS simlator.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.add_box">
+<span class="sig-name descname"><span class="pre">add_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.add_box" title="Permalink to this definition"></a></dt>
+<dd><p>Add a box to the planning scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of box.</p></li>
+<li><p><strong>frame</strong> (<em>str</em>) – The name of frame.</p></li>
+<li><p><strong>pose</strong> (<em>geometry_msgs/Point</em><em>, </em><em>geometry_msgs/Pose</em>) – Coordinates to add a box.</p></li>
+<li><p><strong>size</strong> (<em>list</em><em>[</em><em>float</em><em>]</em>) – The size of box. The size is given as a (x, y, z).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>add_box(“box_0”, “world”, Point(0.0, 0.1, 0.2), (0.1, 0.1, 0.1))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.add_cylinder">
+<span class="sig-name descname"><span class="pre">add_cylinder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.add_cylinder" title="Permalink to this definition"></a></dt>
+<dd><p>Add a cylinder to the planning scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of box.</p></li>
+<li><p><strong>frame</strong> (<em>str</em>) – The name of frame.</p></li>
+<li><p><strong>pose</strong> (<em>geometry_msgs/Point</em><em>, </em><em>geometry_msgs/Pose</em>) – Coordinates to add a cylinder.</p></li>
+<li><p><strong>height</strong> (<em>float</em>) – The height of cylinder.</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – The radius of cylinder.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>add_cylinder(“cylinder_0”, “world”, Point(0.0, 0.1, 0.2), (0.1, 0.1, 0.1))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.add_model_from_sdf">
+<span class="sig-name descname"><span class="pre">add_model_from_sdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">euler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sdf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.add_model_from_sdf" title="Permalink to this definition"></a></dt>
+<dd><p>Add a model from sdf to the planning scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<em>str</em>) – The name of frame.</p></li>
+<li><p><strong>point</strong> (<em>geometry_msgs/Point</em>) – Coordinates to add a model.</p></li>
+<li><p><strong>euler</strong> (<em>geometry_msgs/Point</em>) – Euler angles of the model to be added.</p></li>
+<li><p><strong>sdf</strong> (<em>str</em>) – SDF file path.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>add_model_from_sdf(“world”, Point(0.0, 0.1, 0.2), Point(0.0, 0.0, 1.57))</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.all_close">
+<span class="sig-name descname"><span class="pre">all_close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tolerance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.all_close" title="Permalink to this definition"></a></dt>
+<dd><p>Judges whether the actual value is within the tolerance for the goal value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>goal</strong> (<em>list</em><em>[</em><em>float</em><em>]</em><em>, </em><em>geometry_msgs/Pose</em><em>, </em><em>geometry_msgs/PoseStamped</em>) – The goal value.</p></li>
+<li><p><strong>actual</strong> (<em>list</em><em>[</em><em>float</em><em>]</em><em>, </em><em>geometry_msgs/Pose</em><em>, </em><em>geometry_msgs/PoseStamped</em>) – The actual value.</p></li>
+<li><p><strong>pos_tolerance</strong> (<em>float</em>) – The tolerance of positions.</p></li>
+<li><p><strong>ori_tolerance</strong> (<em>float</em>) – The tolerance of orientations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return True if the value is within the tolerance.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.arm_go">
+<span class="sig-name descname"><span class="pre">arm_go</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.arm_go" title="Permalink to this definition"></a></dt>
+<dd><p>Transition to go posture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.arm_neutral">
+<span class="sig-name descname"><span class="pre">arm_neutral</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.arm_neutral" title="Permalink to this definition"></a></dt>
+<dd><p>Transition to neutral posture.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Execution result.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.base_go_abs">
+<span class="sig-name descname"><span class="pre">base_go_abs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'map'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">motion_synthesis_config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.base_go_abs" title="Permalink to this definition"></a></dt>
+<dd><p>Move in absolute coordinates. It loops infinitely until the goal is reached.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose</strong> (<em>geometry_msgs/Pose2D</em><em>, </em><em>list</em><em>[</em><em>geometry_msgs/Pose2D</em><em>]</em>) – Goal place positions.
+Multiple positions can also be specified in a list.
+In such a case, the robot is moved in order.</p></li>
+<li><p><strong>frame</strong> (<em>str</em>) – The name of reference frame.</p></li>
+<li><p><strong>motion_synthesis_config</strong> (<em>dict</em><em>, </em><em>optional</em>) – <p>If you want to apply the motion synthesis, set the configuration.
+Defaults to {} (Disable).
+The keys for config are as follows,</p>
+<blockquote>
+<div><dl class="simple">
+<dt>start_pose: Transition posture at start.</dt><dd><p>If “auto” is specified, it is automatically set to the go posture of HSR.</p>
+</dd>
+</dl>
+<p>goal_pose: Transition posture at goal.
+exec_from_first: Joint name list to transition from the first.</p>
+<blockquote>
+<div><p>If “all” is specified, all specified joints execute from first.</p>
+</div></blockquote>
+<p>goal_tolerance: Timing of starting motion synthesis (distance from the goal).</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">base_go_abs</span><span class="p">(</span><span class="n">Pose2D</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.57</span><span class="p">),</span>
+<span class="go">                motion_synthesis_config={&quot;start_pose&quot;:&quot;auto&quot;,</span>
+<span class="go">                                         &quot;goal_pose&quot;:{&quot;arm_lift_joint&quot;: 0.1, ...},</span>
+<span class="go">                                         &quot;exec_from_first&quot;: [&quot;arm_lift_joint&quot;]},</span>
+<span class="go">                                         &quot;goal_tolerance&quot;: Point(0.3, 0.3, 0.0))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.gripper_command">
+<span class="sig-name descname"><span class="pre">gripper_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_sync</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.gripper_command" title="Permalink to this definition"></a></dt>
+<dd><p>Change the gripper opening width to a specified value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>float</em>) – Opening width. (Effective range: -0.785[rad] to 1.047[rad])</p></li>
+<li><p><strong>is_sync</strong> (<em>bool</em><em>, </em><em>optional</em>) – Synchronous/asynchronous settings. Defaults to True.</p></li>
+<li><p><strong>time</strong> (<em>float</em><em>, </em><em>optional</em>) – Wait time, valid only when wait=True. Defaults to 1.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.head_tilt">
+<span class="sig-name descname"><span class="pre">head_tilt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.head_tilt" title="Permalink to this definition"></a></dt>
+<dd><p>Change the head tilt joint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>float</em>) – Angle of head tilt. (Effective range: ??[rad] to ??[rad])</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.set_base_acc">
+<span class="sig-name descname"><span class="pre">set_base_acc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.set_base_acc" title="Permalink to this definition"></a></dt>
+<dd><p>Set the maximum acceleration of the base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vel</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum acceleration value.
+The value must be between 0.0 and 1.0. Defaults to 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.set_base_vel">
+<span class="sig-name descname"><span class="pre">set_base_vel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.set_base_vel" title="Permalink to this definition"></a></dt>
+<dd><p>Set the maximum speed of the base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vel</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum speed value.
+The value must be between 0.0 and 1.0. Defaults to 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.set_whole_body_acc">
+<span class="sig-name descname"><span class="pre">set_whole_body_acc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.set_whole_body_acc" title="Permalink to this definition"></a></dt>
+<dd><p>Set the maximum acceleration of the whole_body.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vel</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum acceleration value.
+The value must be between 0.0 and 1.0. Defaults to 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.set_whole_body_vel">
+<span class="sig-name descname"><span class="pre">set_whole_body_vel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.set_whole_body_vel" title="Permalink to this definition"></a></dt>
+<dd><p>Set the maximum speed of the whole_body.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>vel</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum speed value.
+The value must be between 0.0 and 1.0. Defaults to 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.whole_body_IK">
+<span class="sig-name descname"><span class="pre">whole_body_IK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'odom'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.17</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.whole_body_IK" title="Permalink to this definition"></a></dt>
+<dd><p>Inverse kinematics control of the whole body.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Target x of end-effector.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Target y of end-effector.</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Target z of end-effector.</p></li>
+<li><p><strong>roll</strong> (<em>float</em>) – Target roll of end-effector.</p></li>
+<li><p><strong>pitch</strong> (<em>float</em>) – Target pitch of end-effector.</p></li>
+<li><p><strong>yaw</strong> (<em>float</em>) – Target yae of end-effector.</p></li>
+<li><p><strong>frame</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of reference frame. Defaults to “odom”.</p></li>
+<li><p><strong>pos_tolerance</strong> (<em>float</em>) – The tolerance of positions. Defaults to 0.02[m].</p></li>
+<li><p><strong>ori_tolerance</strong> (<em>float</em>) – The tolerance of orientations. Defaults to 0.17[rad].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.whole_body_IK_cartesian">
+<span class="sig-name descname"><span class="pre">whole_body_IK_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_avoid_obstacle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fraction_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.17</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.whole_body_IK_cartesian" title="Permalink to this definition"></a></dt>
+<dd><p>Inverse kinematics control of the whole body for multiple coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Target x of end-effector.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Target y of end-effector.</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Target z of end-effector.</p></li>
+<li><p><strong>roll</strong> (<em>float</em>) – Target roll of end-effector.</p></li>
+<li><p><strong>pitch</strong> (<em>float</em>) – Target pitch of end-effector.</p></li>
+<li><p><strong>yaw</strong> (<em>float</em>) – Target yae of end-effector.</p></li>
+<li><p><strong>is_avoid_obstacle</strong> (<em>str</em><em>, </em><em>optional</em>) – Whether or not to avoid obstacles using planning scene.
+Defaults to True.</p></li>
+<li><p><strong>eef_step</strong> (<em>float</em><em>, </em><em>optional</em>) – Operating calculation steps. Defaults to 0.01[m].</p></li>
+<li><p><strong>fraction_th</strong> (<em>float</em><em>, </em><em>optional</em>) – This function is not executed if the calculated fraction is below the threshold.
+If the calculation was incomplete, fraction indicates the percentage of paths calculated (number of waypoints passed).
+Defaults to 0.5[m].</p></li>
+<li><p><strong>pos_tolerance</strong> (<em>float</em>) – The tolerance of positions. Defaults to 0.02[m].</p></li>
+<li><p><strong>ori_tolerance</strong> (<em>float</em>) – The tolerance of orientations. Defaults to 0.17[rad].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="libhsrmoveit.LibHSRMoveit.whole_body_IK_cartesian_with_timeout">
+<span class="sig-name descname"><span class="pre">whole_body_IK_cartesian_with_timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pitch</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_avoid_obstacle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eef_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fraction_th</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ori_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.17</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#libhsrmoveit.LibHSRMoveit.whole_body_IK_cartesian_with_timeout" title="Permalink to this definition"></a></dt>
+<dd><p>Inverse kinematics control of the whole body for multiple coordinates with timeout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Target x of end-effector.</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – Target y of end-effector.</p></li>
+<li><p><strong>z</strong> (<em>float</em>) – Target z of end-effector.</p></li>
+<li><p><strong>roll</strong> (<em>float</em>) – Target roll of end-effector.</p></li>
+<li><p><strong>pitch</strong> (<em>float</em>) – Target pitch of end-effector.</p></li>
+<li><p><strong>yaw</strong> (<em>float</em>) – Target yae of end-effector.</p></li>
+<li><p><strong>is_avoid_obstacle</strong> (<em>str</em><em>, </em><em>optional</em>) – Whether or not to avoid obstacles using planning scene.
+Defaults to True.</p></li>
+<li><p><strong>eef_step</strong> (<em>float</em><em>, </em><em>optional</em>) – Operating calculation steps. Defaults to 0.01[m].</p></li>
+<li><p><strong>fraction_th</strong> (<em>float</em><em>, </em><em>optional</em>) – This function is not executed if the calculated fraction is below the threshold.
+If the calculation was incomplete, fraction indicates the percentage of paths calculated (number of waypoints passed).
+Defaults to 0.5[m].</p></li>
+<li><p><strong>pos_tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – The tolerance of positions. Defaults to 0.02[m].</p></li>
+<li><p><strong>ori_tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – The tolerance of orientations. Defaults to 0.17[rad].</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Timeout time. Defaults to 5.0[sec].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Execution result.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="libhsraction.html" class="btn btn-neutral float-left" title="libhsraction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../hma_hsr_sim_pkg/index.html" class="btn btn-neutral float-right" title="hma_hsr_sim_pkg" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hibikino-Musashi@Home.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
