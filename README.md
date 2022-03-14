@@ -30,6 +30,7 @@ Please perform the docker installation described in the [WRS Simulator](https://
 ```
 $ mkdir -p ~/ros_ws/hma && cd ~/ros_ws/hma
 $ git clone --recursive https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws.git
+$ cd hma_wrs_sim_ws
 $ source /opt/ros/melodic/setup.bash
 $ catkin build
 ```
