@@ -1,7 +1,7 @@
 # publish_obstacles_node
 This node provides the function to publish obstacles topics for navigation.
 
-This node requires a [mapping_object_server](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/review/src/01_common/hma_common/hma_common_pkg/docs/mapping_object_server.md).
+This node requires a [mapping_object_server](mapping_object_server.md).
 
 ## Interfaces
 ### Published topics

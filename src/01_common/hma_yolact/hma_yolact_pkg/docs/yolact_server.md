@@ -110,7 +110,7 @@ The maximum distance to be recognized.
 
 Results beyond the maximum distance are ignored, and the resulting image is blacked out.
 
-Valid only when `is_d` is `True`.
+Valid only when `use_d` is `True`.
 
 Defaults to `-1.0`.
 
@@ -166,6 +166,9 @@ Publish recognition results.
 **~yolact_with_pose ([hma_yolact_msgs/YolactWithPose.msg]())**
 
 Publish recognition results with the 3D pose.
+
+Publish when the `~use_d` parameter is `True`.
+
 
 ### Subscribed topics
 **camera/rgb/image_raw ([sensor_msgs/Image.msg](https://docs.ros.org/en/api/sensor_msgs/html/msg/Image.html))**
