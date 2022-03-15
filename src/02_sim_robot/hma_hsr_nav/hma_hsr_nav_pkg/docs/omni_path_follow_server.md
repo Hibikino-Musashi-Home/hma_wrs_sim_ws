@@ -16,6 +16,6 @@ Cancel tmc_omni_path_follower.
 Publish status of path following.
 
 ### Action servers
-**omni_path_follow ([hma_hsr_nav_action/OmniPathFollower]())**
+**omni_path_follow ([hma_hsr_nav_action/OmniPathFollower](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/02_sim_robot/hma_hsr_nav/hma_hsr_nav_action/action/OmniPathFollower.html))**
 
 This action server provides the function for path following.

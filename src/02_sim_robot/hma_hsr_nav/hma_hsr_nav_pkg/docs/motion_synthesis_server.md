@@ -4,6 +4,6 @@ This node provides the function of navigation and posture transition simultaneou
 
 ## Interfaces
 ### Action servers
-**motion_synthesis ([hma_hsr_nav_action/MotionSynthesisAction]())**
+**motion_synthesis ([hma_hsr_nav_action/MotionSynthesisAction](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/02_sim_robot/hma_hsr_nav/hma_hsr_nav_action/action/MotionSynthesis.html))**
 
 This action server provides the function for motion synthesis.
