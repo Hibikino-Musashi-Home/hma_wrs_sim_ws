@@ -56,6 +56,6 @@ Subscribe only once for the first time.
 The topic name is changed by the `~camera_info` parameter.
 
 ### Action servers
-**detect_drivable_area ([hma_hsr_gg_pkg/DetectDrivableAreaAction]())**
+**detect_drivable_area ([hma_hsr_gg_pkg/DetectDrivableAreaAction](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/02_sim_robot/tasks/hma_hsr_gg_pkg/action/DetectDrivableArea.html))**
 
 This action server provides a function to detect the drivable area to aoivd obstacles.
