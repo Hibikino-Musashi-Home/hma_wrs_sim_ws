@@ -127,9 +127,12 @@ class MappingObjectServer:
             marker.pose.orientation.w = 1.0
             
             # points
-            x_list = [area_data[key]["min"]["x"], area_data[key]["max"]["x"]]
-            y_list = [area_data[key]["min"]["y"], area_data[key]["max"]["y"]]
-            z_list = [area_data[key]["min"]["z"], area_data[key]["max"]["z"]]
+            try:
+                x_list = [area_data[key]["min"]["x"], area_data[key]["max"]["x"]]
+                y_list = [area_data[key]["min"]["y"], area_data[key]["max"]["y"]]
+                z_list = [area_data[key]["min"]["z"], area_data[key]["max"]["z"]]
+            except:
+                continue
             for x in x_list:
                 for y in y_list:
                     for z in z_list:
@@ -222,11 +225,14 @@ class MappingObjectServer:
             for key in area_data.keys():
                 if search_place != "" and search_place not in key:
                     continue
-                if poses[i].position.x < area_data[key]["min"]["x"] or poses[i].position.x > area_data[key]["max"]["x"]: 
-                    continue
-                if poses[i].position.y < area_data[key]["min"]["y"] or poses[i].position.y > area_data[key]["max"]["y"]: 
-                    continue
-                if poses[i].position.z < area_data[key]["min"]["z"] or poses[i].position.z > area_data[key]["max"]["z"]: 
+                try:
+                    if poses[i].position.x < area_data[key]["min"]["x"] or poses[i].position.x > area_data[key]["max"]["x"]: 
+                        continue
+                    if poses[i].position.y < area_data[key]["min"]["y"] or poses[i].position.y > area_data[key]["max"]["y"]: 
+                        continue
+                    if poses[i].position.z < area_data[key]["min"]["z"] or poses[i].position.z > area_data[key]["max"]["z"]: 
+                        continue
+                except:
                     continue
 
                 self.objects = np.append(self.objects,
@@ -323,11 +329,14 @@ class MappingObjectServer:
 
             # place
             for key in area_data.keys():
-                if points[i].x < area_data[key]["min"]["x"] or points[i].x > area_data[key]["max"]["x"]: 
-                    continue
-                if points[i].y < area_data[key]["min"]["y"] or points[i].y > area_data[key]["max"]["y"]: 
-                    continue
-                if points[i].z < area_data[key]["min"]["z"] or points[i].z > area_data[key]["max"]["z"]: 
+                try:
+                    if points[i].x < area_data[key]["min"]["x"] or points[i].x > area_data[key]["max"]["x"]: 
+                        continue
+                    if points[i].y < area_data[key]["min"]["y"] or points[i].y > area_data[key]["max"]["y"]: 
+                        continue
+                    if points[i].z < area_data[key]["min"]["z"] or points[i].z > area_data[key]["max"]["z"]: 
+                        continue
+                except:
                     continue
                 self.mapping_data["place"].append(key)
                 break
@@ -405,11 +414,14 @@ class MappingObjectServer:
         # Check
         elif goal.action == MappingAction.CHECK:
             for key in self.area_data.keys():
-                if goal.pose[0].position.x < self.area_data[key]["min"]["x"] or goal.pose[0].position.x > self.area_data[key]["max"]["x"]: 
-                    continue
-                if goal.pose[0].position.y < self.area_data[key]["min"]["y"] or goal.pose[0].position.y > self.area_data[key]["max"]["y"]: 
-                    continue
-                if goal.pose[0].position.z < self.area_data[key]["min"]["z"] or goal.pose[0].position.z > self.area_data[key]["max"]["z"]: 
+                try:
+                    if goal.pose[0].position.x < self.area_data[key]["min"]["x"] or goal.pose[0].position.x > self.area_data[key]["max"]["x"]: 
+                        continue
+                    if goal.pose[0].position.y < self.area_data[key]["min"]["y"] or goal.pose[0].position.y > self.area_data[key]["max"]["y"]: 
+                        continue
+                    if goal.pose[0].position.z < self.area_data[key]["min"]["z"] or goal.pose[0].position.z > self.area_data[key]["max"]["z"]: 
+                        continue
+                except:
                     continue
                 result.place = [key]
 
