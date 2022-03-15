@@ -159,11 +159,11 @@ Publish the depth image for visualization.
 
 Publish the result mask image for visualization.
 
-**~yolact_without_pose ([hma_yolact_msgs/YolactWithoutPose.msg]())**
+**~yolact_without_pose ([hma_yolact_msgs/YolactWithoutPose.msg](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/01_common/hma_yolact/hma_yolact_msgs/msg/YolactWithoutPose.html))**
 
 Publish recognition results.
 
-**~yolact_with_pose ([hma_yolact_msgs/YolactWithPose.msg]())**
+**~yolact_with_pose ([hma_yolact_msgs/YolactWithPose.msg](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/01_common/hma_yolact/hma_yolact_msgs/msg/YolactWithPose.html))**
 
 Publish recognition results with the 3D pose.
 
@@ -199,7 +199,7 @@ The topic name is changed by the `~camera_info` parameter.
 
 
 ### Action servers
-**yolact ([hma_yolact_action/YolactAction]())**
+**yolact ([hma_yolact_action/YolactAction](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/01_common/hma_yolact/hma_yolact_action/action/Yolact.html))**
 
 This action server provides a function to recognize objects.
 
