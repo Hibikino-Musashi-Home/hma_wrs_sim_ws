@@ -1,16 +1,15 @@
-FROM ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-rc21
+FROM ghcr.io/haganelego/hma_ros_docker/hma_ros:melodic-cuda11.2.2-cudnn8-simulator
 
 SHELL [ "/bin/bash", "-c" ]
 
-ENV HOME /rcap21
-ENV ROS_MASTER_URI http://simulator:11311
-
-# install hsr package
-# TODO
+ENV HOME /home
 
 # create workspace folder
 RUN mkdir -p $HOME/ros_ws/hma/hma_wrs_sim_ws
 RUN mkdir -p $HOME/ros_ws/hma/cv_bridge_ws
+
+# install dependencies defined in package.xml
+RUN rosdep init && rosdep update
 
 # build cv_bridge, image_geometry
 RUN source /opt/ros/melodic/setup.bash && \
@@ -26,19 +25,23 @@ RUN source /opt/ros/melodic/setup.bash && \
     catkin build cv_bridge && \
     catkin build image_geometry 
 
-# copy algorithm
-ADD . $HOME/ros_ws/hma/hma_wrs_sim_ws
+# # copy files
+ADD ./scripts $HOME/ros_ws/hma/hma_wrs_sim_ws/scripts
+ADD ./src/03_hsrb/deb $HOME/setup/deb
 
-# install dependencies defined in package.xml
-RUN rosdep update
-
-# compile and install our algorithm
-RUN cd $HOME/ros_ws/hma/hma_wrs_sim_ws && source /opt/ros/$ROS_DISTRO/setup.bash && catkin build
-
-# download yolact weight
-RUN cd ~/ros_ws/hma/hma_wrs_sim_ws/src/01_common/hma_yolact_pkgs/hma_yolact_pkg/io/ && \
-    wget TODO -O weights.zip && \
-    unzip -o weights
-
-CMD source $HOME/ros_ws/hma/catkin_workspace/install/setup.bash --extend && source $HOME/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash && sh ~/ros_ws/hma/hma_wrs_sim_ws/technical_challenge.sh
-
+# install hsrb package
+RUN cd $HOME/setup/deb && \
+    dpkg -i ros-melodic-tarp3_0.6.0-1.bionic.20210617.2331.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tarp3-urdf_0.6.0-1.bionic.20210617.2331.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-navigation-msgs_0.24.0-1.bionic.20211108.0234.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-pose-2d-lib_0.30.1-1.bionic.20211108.0503.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-omni-path-follower_0.30.1-1.bionic.20211108.0503.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-control-msgs_0.9.2-1.bionic.20211108.0259.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-manipulation-types_0.32.1-1.bionic.20211108.0324.+0000_amd64.deb && \
+    dpkg -i ros-melodic-tmc-robot-kinematics-model_0.32.1-1.bionic.20211108.0324.+0000_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-analytic-ik_0.29.4-1.bionic.20211108.0549.+0000_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-parts-description_0.20.5-1.bionic.20211104.0057.+0000_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-description_0.20.5-1.bionic.20211104.0057.+0000_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-moveit-config_1.0.0-2.bionic.20220309.2325.+0000.29cd601_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-moveit-plugins_0.6.3-2.bionic.20220309.2325.+0000.29cd601_amd64.deb && \
+    dpkg -i ros-melodic-hsrb-moveit_0.6.3-2.bionic.20220309.2325.+0000.29cd601_amd64.deb
