@@ -27,7 +27,7 @@ RUN source /opt/ros/melodic/setup.bash && \
 
 # # copy files
 ADD ./scripts $HOME/ros_ws/hma/hma_wrs_sim_ws/scripts
-ADD ./src/03_hsrb/deb $HOME/setup/deb
+ADD ./src/03_tmc/deb $HOME/setup/deb
 
 # install hsrb package
 RUN cd $HOME/setup/deb && \
