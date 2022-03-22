@@ -167,8 +167,7 @@ Publish recognition results.
 
 Publish recognition results with the 3D pose.
 
-Publish when the `~use_d` parameter is `True`.
-
+Publish when the `~use_d` and `~get_pose` parameters are `True`.
 
 ### Subscribed topics
 **camera/rgb/image_raw ([sensor_msgs/Image.msg](https://docs.ros.org/en/api/sensor_msgs/html/msg/Image.html))**
