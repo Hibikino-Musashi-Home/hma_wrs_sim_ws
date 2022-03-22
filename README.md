@@ -1,13 +1,15 @@
 <div align="center">
   <img src="resources/hma_logo.png" width="300"/>
   <div align="center">
+    <b><font size="6">Hibikino-Musashi@Home</font></b><br>
     <a href="https://www.brain.kyutech.ac.jp/~hma/">
-      <b><font size="5">Hibikino-Musashi@Home website</font></b><br>
+      <b><font size="5">&#x1f5a5; Website</font></b>
     </a>
+    &nbsp;|&nbsp;
     <a href="https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/">
-      <b><font size="4">Documentation</font></b><br>
+      <b><font size="5">&#x1f4d6; Documentation</font></b><br>
     </a>
-  </div><br><br>
+  </div><br>
   <img src="resources/mapping.png" width="500"/>&nbsp;&nbsp;
   <img src="resources/yolact.gif" width="234"/>
 </div>
@@ -20,19 +22,19 @@ It contains the source code that won 2nd place at [RoboCup 2021 Worldwide](https
 
 It also contains a part of the 1st place source code at the [World Robot Summit 2020 Partner Robot Challenge (Real Space)](https://wrs.nedo.go.jp/wrs2020/challenge/service/partner.html).
 
+## Test environment
+This workspace was tested on Ubuntu 18.04, ROS Melodic, RTX 3090, CUDA 11.2, and cuDNN 8.
+
 ## Execution video
 [![](https://img.youtube.com/vi/DRKtSZEgaNQ/0.jpg)](https://www.youtube.com/watch?v=DRKtSZEgaNQ)
 
 # Installation
 Please perform the docker installation described in the [WRS Simulator](https://github.com/hsr-project/tmc_wrs_docker) in advance.
 
-## Clone repository and Build workspace
+## Clone repository
 ```
 $ mkdir -p ~/ros_ws/hma && cd ~/ros_ws/hma
 $ git clone --recursive https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws.git
-$ cd hma_wrs_sim_ws
-$ source /opt/ros/melodic/setup.bash
-$ catkin build
 ```
 
 ## Download weights for object recognition 
@@ -44,14 +46,16 @@ $ sh get-weights.sh
 # Usage
 ## 1. Starting the simulator
 ```
+$ DISPLAY=:0 xhost si:localuser:root
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker
 $ docker-compose -f docker-compose.nvidia.yml up
 ```
 After starting the simulator, access to [http://localhost:3000/](http://localhost:3000/) and press the Start button (▷) on the simulator.
 
-## 2. Executing the program
-## i. with docker
+## 2. Executing the program with docker
+Start a new terminal and execute the following commands.
 ```
+$ cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker/ && source set-rosmaster.sh
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
 $ docker build . -t hma_wrs_sim_ws
 $ sh docker-run.sh
@@ -64,12 +68,6 @@ $ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
 
 - If you exit from a docker container by typing ctrl + p, ctrl + q, you can re-enter the container with `$ docker attach [container id]`.
 The container id can check using `$ docker ps`.
-
-## ii. without docker
-```
-$ cd ~/ros_ws/hma/hma_wrs_sim_ws
-$ sh scripts/exec_all.sh
-```
 
 # License
 This software is released under the BSD 3-Clause Clear License, see [LICENSE](https://github.com/Hibikino-Musashi-Home/hma_wrs_sim_ws/blob/master/LICENSE).
