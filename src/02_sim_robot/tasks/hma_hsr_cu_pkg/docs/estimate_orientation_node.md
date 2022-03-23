@@ -1,5 +1,5 @@
 # estimate_orientation_node
-This node provides the function to estimate the cutlery and marker orientation using template match.
+This node provides the function to estimate the cutlery and marker orientation using template matching.
 
 A hand camera is used for orientation estimation.
 
