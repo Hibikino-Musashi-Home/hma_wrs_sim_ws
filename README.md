@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="resources/hma_logo.png" />
+  <img src="resources/logo.png" />
   <div align="center">
     <!-- <b><font size="6">Hibikino-Musashi@Home</font></b><br> -->
     <a href="https://www.brain.kyutech.ac.jp/~hma/">
