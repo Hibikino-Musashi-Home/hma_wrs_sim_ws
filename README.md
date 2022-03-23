@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="resources/hma_logo.png" width="300"/>
+  <img src="resources/hma_logo.png" />
   <div align="center">
-    <b><font size="6">Hibikino-Musashi@Home</font></b><br>
+    <!-- <b><font size="6">Hibikino-Musashi@Home</font></b><br> -->
     <a href="https://www.brain.kyutech.ac.jp/~hma/">
       <b><font size="5">&#x1f5a5; Website</font></b>
     </a>
@@ -45,11 +45,20 @@ $ sh get-weights.sh
 
 # Usage
 ## 1. Starting the simulator
+### i. with GPU
 ```
 $ DISPLAY=:0 xhost si:localuser:root
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker
 $ docker-compose -f docker-compose.nvidia.yml up
 ```
+
+### ii. without GPU
+```
+$ DISPLAY=:0 xhost si:localuser:root
+$ cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker
+$ docker-compose -f docker-compose.yml up
+```
+
 After starting the simulator, access to [http://localhost:3000/](http://localhost:3000/) and press the Start button (▷) on the simulator.
 
 ## 2. Executing the program with docker
