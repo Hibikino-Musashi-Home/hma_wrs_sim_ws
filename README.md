@@ -1,7 +1,6 @@
 <div align="center">
   <img src="resources/logo.png" />
   <div align="center">
-    <!-- <b><font size="6">Hibikino-Musashi@Home</font></b><br> -->
     <a href="https://www.brain.kyutech.ac.jp/~hma/">
       <b><font size="5">&#x1f5a5; Website</font></b>
     </a>
@@ -43,6 +42,12 @@ $ cd ~/ros_ws/hma/hma_wrs_sim_ws
 $ sh get-weights.sh
 ```
 
+## Build docker
+```
+$ cd ~/ros_ws/hma/hma_wrs_sim_ws
+$ docker build . -t hma_wrs_sim_ws
+```
+
 # Usage
 ## 1. Starting the simulator
 ### i. with GPU
@@ -66,14 +71,14 @@ Start a new terminal and execute the following commands.
 ```
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws/src/04_sim_docker/hsrb_robocup_dspl_docker/ && source set-rosmaster.sh
 $ cd ~/ros_ws/hma/hma_wrs_sim_ws
-$ docker build . -t hma_wrs_sim_ws
 $ sh docker-run.sh
 $ source /opt/ros/melodic/setup.bash && cd ~/ros_ws/hma/hma_wrs_sim_ws && catkin build
 $ source ~/ros_ws/hma/cv_bridge_ws/install/setup.bash --extend && source ~/ros_ws/hma/hma_wrs_sim_ws/devel/setup.bash
 $ sh ~/ros_ws/hma/hma_wrs_sim_ws/scripts/exec_all.sh
 ```
+
 ### Notes
-- Changing the source code placed in ~/ros_ws/hma/hma_wrs_sim_ws/src on the local computer also changes the source code in the docker container.
+- Changing the source code placed in ~/ros_ws/hma/hma_wrs_sim_ws/src on the host computer also changes the source code in the docker container.
 
 - If you exit from a docker container by typing ctrl + p, ctrl + q, you can re-enter the container with `$ docker attach [container id]`.
 The container id can check using `$ docker ps`.
