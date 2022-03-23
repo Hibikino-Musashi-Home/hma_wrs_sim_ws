@@ -31,17 +31,19 @@ Publish obstacle information for navigation.
 Publish the environment map with obstacles added.
 
 ### Subscribed topics
-**~finish ([std_msgs/Empty.msg](http://docs.ros.org/en/melodic/api/std_msgs/html/msg/Empty.html))**
+**detect_drivable_area_server/finish ([std_msgs/Empty.msg](http://docs.ros.org/en/melodic/api/std_msgs/html/msg/Empty.html))**
 
 Subscribe to the finish decision.
 
 The obstacle information will continue to be published until this topic is subscribed.
 
-**~d ([sensor_msgs/Image.msg](http://docs.ros.org/en/melodic/api/sensor_msgs/html/msg/Image.html))**
+**camera/depth_registered/image_raw ([sensor_msgs/Image.msg](http://docs.ros.org/en/melodic/api/sensor_msgs/html/msg/Image.html))**
 
 Subscribe to the depth image.
 
-**~map/hma ([nav_msgs/OccupancyGrid.msg](http://docs.ros.org/en/lunar/api/nav_msgs/html/msg/OccupancyGrid.html))**
+The topic name is changed by the `~d` parameter.
+
+**map/hma ([nav_msgs/OccupancyGrid.msg](http://docs.ros.org/en/lunar/api/nav_msgs/html/msg/OccupancyGrid.html))**
 
 Subscribe to the environment map before obstacles are added.
 
