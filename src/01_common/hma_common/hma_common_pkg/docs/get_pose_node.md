@@ -10,7 +10,7 @@ You can see the (x, y, yaw) position on the terminal.
 
 ## Interfaces
 ### Subscribed topics
-**~run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
+**get_pose_node/run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
 
 Control whether or not execution is performed.
 

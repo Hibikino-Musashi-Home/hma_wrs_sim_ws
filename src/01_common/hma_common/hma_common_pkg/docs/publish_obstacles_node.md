@@ -10,7 +10,7 @@ This node requires a [mapping_object_server](mapping_object_server.md).
 Object information is published as a point cloud for obstacles of navigation.
 
 ### Subscribed topics
-**~run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
+**publish_obstacles_node/run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
 
 Control whether or not execution is performed.
 

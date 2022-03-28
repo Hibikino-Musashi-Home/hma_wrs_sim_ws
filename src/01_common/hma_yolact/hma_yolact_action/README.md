@@ -1,3 +1,3 @@
 # hma_yolact_action
 
-The actions for YolactEdge.
+The action definitions for YolactEdge.

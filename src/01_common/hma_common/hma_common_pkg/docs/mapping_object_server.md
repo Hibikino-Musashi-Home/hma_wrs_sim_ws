@@ -61,4 +61,4 @@ Publish markers for visualization indicating the name of mapping objects.
 ### Action servers
 **mapping_object ([hma_common_action/MappingObjectAction](https://hibikino-musashi-home.github.io/hma_wrs_sim_ws/src/01_common/hma_common/hma_common_action/action/MappingObject.html))**
 
-This action server provides various functions such as adding objects, performing mappings, and referencing objects.
+This action server provides various functions such as adding objects, performing mappings and referencing objects.

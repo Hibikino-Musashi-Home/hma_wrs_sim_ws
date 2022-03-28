@@ -25,7 +25,7 @@ Defaults to `"yolact_edge_pytorch_config"`.
 
 **~weight (str)**
 
-The threshold uses for recognition.
+The model uses for recognition.
 
 Defaults to `"hma_yolact_pkg/io/weights/yolact_edge_54_800000.pth"`.
 

@@ -1,3 +1,3 @@
 # hma_common_action
 
-The actions for common functions.
+The action definitions for common functions.
