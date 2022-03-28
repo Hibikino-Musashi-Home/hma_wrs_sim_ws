@@ -14,7 +14,7 @@ You can operate HSR by pressing `WASDQE` on your keyboard on the window.
 
 ## Interfaces
 ### Subscribed topics
-**~run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
+**teleop_node/run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
 
 Control whether or not execution is performed.
 

@@ -87,6 +87,6 @@ In the case of `task1`, only the objects in Task 1 are deleted.
 Defaults to `task`.
 
 ### Subscribed topics
-**~gazebo/model_states ([gazebo_msgs/ModelStates.msg](http://docs.ros.org/en/jade/api/gazebo_msgs/html/msg/ModelStates.html))**
+**gazebo/model_states ([gazebo_msgs/ModelStates.msg](http://docs.ros.org/en/jade/api/gazebo_msgs/html/msg/ModelStates.html))**
 
 Get the states of a model existing on Gazebo.

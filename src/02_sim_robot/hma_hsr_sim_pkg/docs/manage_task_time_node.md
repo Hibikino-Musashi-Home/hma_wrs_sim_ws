@@ -1,7 +1,7 @@
 # manage_task_time_node
 This node provides the function to manage the task time.
 
-## Usage
+## ROS node features
 The following statement in the launch file will cause all programs to terminate when the specified **simulation time** has elapsed.
 ```
 <launch>
@@ -23,7 +23,7 @@ Set the task time in minutes.
 When the set time elapsed, the node terminates.
 
 ### Subscribed topics
-**~run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
+**manage_task_time_node/run_enable ([std_msgs/Bool](http://docs.ros.org/en/api/std_msgs/html/msg/Bool.html))**
 
 Control whether or not execution is performed.
 
